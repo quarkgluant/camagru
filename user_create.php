@@ -86,22 +86,21 @@ font-family : monospace ;
 		<br/>
 		<?php
 		//On verifie que le formulaire a ete envoye
-		if(isset($_POST['username'], $_POST['password'], $_POST['passverif'], $_POST['email'], $_POST['avatar']) and $_POST['username']!='')
+		if(isset($_POST['login'], $_POST['password'], $_POST['passverif'], $_POST['email']) and $_POST['login']!='')
 		{
 		        //On enleve lechappement si get_magic_quotes_gpc est active
 		        if(get_magic_quotes_gpc())
 		        {
-		                $_POST['username'] = stripslashes($_POST['username']);
+		                $_POST['login'] = stripslashes($_POST['login']);
 		                $_POST['password'] = stripslashes($_POST['password']);
 		                $_POST['passverif'] = stripslashes($_POST['passverif']);
 		                $_POST['email'] = stripslashes($_POST['email']);
-		                $_POST['avatar'] = stripslashes($_POST['avatar']);
 		        }
 		        //On verifie si le mot de passe et celui de la verification sont identiques
 		        if($_POST['password']==$_POST['passverif'])
 		        {
 		                //On verifie si le mot de passe a 6 caracteres ou plus
-		                if(strlen($_POST['password'])>=6)
+		                if(strlen($_POST['password'])>=8)
 		                {
 		                        //On verifie si lemail est valide
 		                        if(preg_match('#^(([a-z0-9!\#$%&\\\'*+/=?^_`{|}~-]+\.?)*[a-z0-9!\#$%&\\\'*+/=?^_`{|}~-]+)@(([a-z0-9-_]+\.?)*[a-z0-9-_]+)\.[a-z]{2,}$#i',$_POST['email']))
@@ -111,14 +110,14 @@ font-family : monospace ;
 																	{
 																		if ($user['login'] === $_POST['login'] || $user['email'] === $_POST['email'])
 																			{
-																				//Sinon on dit quil y a eu une erreur
-																				$form = true;
-																				$message = 'Une erreur est survenue lors de l\'inscription.';
+                                        //Sinon, on dit que le pseudo voulu est deja pris
+                                        $form = true;
+                                        $message = 'Un autre utilisateur utilise d&eacute;j&agrave; le nom d\'utilisateur que vous d&eacute;sirez utiliser.';
 																			}
 																		else
 																			{
 																				$passwd_hash = hash('whirlpool', $_POST['passwd']);
-																				$users[] = array('login' => $_POST['login'], 'mail' => $_POST['mail'], 'passwd' => $passwd_hash);
+																				$users[] = array('login' => $_POST['login'], 'email' => $_POST['email'], 'passwd' => $passwd_hash);
 																				users_push($users);
 																				//Si ca a fonctionne, on naffiche pas le formulaire
 																				$form = false;
@@ -129,15 +128,9 @@ font-family : monospace ;
 													<a href="index.php">Se connecter</a></div>
 
 <?php
-		                                        }
-		                                }
-		                                else
-		                                {
-		                                        //Sinon, on dit que le pseudo voulu est deja pris
-		                                        $form = true;
-		                                        $message = 'Un autre utilisateur utilise d&eacute;j&agrave; le nom d\'utilisateur que vous d&eacute;sirez utiliser.';
-		                                }
-		                        }
+		                        				}
+																}
+														}
 		                        else
 		                        {
 		                                //Sinon, on dit que lemail nest pas valide
@@ -149,7 +142,7 @@ font-family : monospace ;
 		                {
 		                        //Sinon, on dit que le mot de passe nest pas assez long
 		                        $form = true;
-		                        $message = 'Le mot de passe que vous avez entr&eacute; contien moins de 6 caract&egrave;res.';
+		                        $message = 'Le mot de passe que vous avez entr&eacute; contien moins de 8 caract&egrave;res.';
 		                }
 		        }
 		        else
