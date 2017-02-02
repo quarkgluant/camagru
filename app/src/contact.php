@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+$flag = '0';
 ?>
 <HTML>
 <HEAD>
@@ -10,13 +10,6 @@ session_start();
 	<Meta  charset = "UTF-8">
 <meta name="viewport" content="initial-scale=1.0,width=device-width" />
 <link rel="stylesheet" href="../../public/css/application.css" />
-<script>
-
- <?php
-include('../js/confirm_del.js');
-?>
-
-</script>
 </HEAD>
 <body>
 
@@ -29,7 +22,7 @@ include('../js/confirm_del.js');
 <tr>
 
 <?php
-	include('../views/main.php');
+	include('../views/contact_main.php');
 ?>
 
 </tr>
@@ -40,12 +33,5 @@ include('../js/confirm_del.js');
 	include('../views/footer.php');
 ?>
 
-<script>
-
- <?php
-include('../js/camera.js');
-?>
-
-</script>
 </body>
 </html>

@@ -1,12 +1,7 @@
 <td class="side">
-  <div>
-    <p>N'hésitez pas à rendre visite à nos sponsors !</p>
+    Modifiez vos images !
     <ul>
-      <li><a href="#">item</a></li>
-      <li><a href="#">item</a></li>
-      <li><a href="#">item</a></li>
-      <li><a href="#">item</a></li>
-      <li><a href="#">item</a></li>
+      <li><a href="#">Vos images sauvegardées !</a></li>
+      <li><a href="#">Choisissez un décor !</a></li>
     </ul>
-  </div>
 </td>

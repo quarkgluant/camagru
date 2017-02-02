@@ -1,18 +1,16 @@
 <header>
   <center><h1><B> Vous êtes sur Camagru</B></h1></center>
-  <br/>
+
   <nav>
     <ul>
-      <li><a href="#">Navigation</a></li>
-      <li><a href="#">Qui nous sommes</a></li>
-      <li><a href="#">Ce que nous faisons</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="user_password_modify.php">Modifier son mot de passe !</a></li>
+      <li><a href="javascript:confirmDel()">Supprimer son compte !</a></li>
+      <li><a href="./contact.php">Contacts</a></li>
+    </br>
+      <li><i><a  href = "../../public/index.php"> Revenir à l'accueil !!!! </a></i></li>
+<br/>
+      <h3><a href="../../public/index.php">Se déconnecter !</a></h3>
     </ul>
+      </nav>
 
-    <form>
-      <input type="search" name="q" placeholder="Recherchez...">
-      <input type="submit" value="OK">
-    </form>
-    <br/>
-  </nav>
 </header>
