@@ -1,5 +1,4 @@
 <?php
-
 $destinataire = 'sangare@rocketmail.com';
 // Pour les champs $expediteur / $copie / $destinataire, séparer par une virgule s'il y a plusieurs adresses
 $expediteur = 'fsangare@student.42.fr';
@@ -14,11 +13,27 @@ $headers .= 'Cc: '.$copie."\n"; // Copie Cc
 $headers .= 'Bcc: '.$copie_cachee."\n\n"; // Copie cachée Bcc
 $message = $_POST['msg'];
 if (mail($destinataire, $objet, $message, $headers)) // Envoi du message
+{
 ?>
-<br/>	<br/><h4>Mail correctement envoyé !</h4>
-<br/>
+
+</br>
+<H5 style="color: green; text-align:center; font-style : bold ; font-family : monospace ; box-shadow:0 0 10px;"> Mail correctement envoyé au format Texte !</H5>
+</br>
+
 <?php
-  else // Non envoyé
-	?>
-	<br/>	<br/><h4>Mail non envoyé : un problème est survenu !</h4>
-	<br/>
+}// Envoi du message
+  else
+{// Non envoyé
+?>
+
+</br>
+<H4>Problème d'envoi du mail au format Texte !</H4>
+</br>
+
+<?php
+}
+$_POST["mail"] = "";
+$_POST["msg"] = "";
+$_POST["obj"] = "";
+$_POST["html"] = "txt";
+?>

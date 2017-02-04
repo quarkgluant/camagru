@@ -1,7 +1,7 @@
 <?php
 
-session_start();
-$flag = '0';
+//session_start();
+
 ?>
 <HTML>
 <HEAD>

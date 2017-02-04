@@ -16,11 +16,11 @@
 <table>
 	<tr>
 		<td>
-<form method="post" action="contact.php" autocomplete="on">
+<form method="post" action="../src/send_mail.php" autocomplete="on">
 Votre adresse mail : </td><td><input type="email" name="mail" size="80" maxlength="100" autofocus/></br></br>
 </td></tr>
 <tr><td>
-Objet du message : </td><td><input list="listObj" name="Obj" size="110" maxlength="150">
+Objet du message : </td><td><input list="listObj" name="obj" size="110" maxlength="150">
 <datalist id="listObj">
   <option value="Problèmes techniques">
   <option value="Besoin d'informations complémentaires">
@@ -43,31 +43,3 @@ Votre message : </td><td><TEXTAREA name="msg" rows=10 cols=120 wrap="physical" /
 <a  href = "./main_camagru.php"> Revenir à la page précédente !!!! </a>
 <br/>
 <br/><br/>
-
-<?php
-if (isset($_POST['mail']) && isset($_POST['msg']) && isset($_POST['obj']))
-{
-	if ($_POST['html'] == 'html')
-	{
-		include('./send_mail_html.php');
-	}
-	else
-	{
-		include('./send_mail_txt.php');
-	}
-}
-else
-{
-	if ($flag == '1')
-	{
-	?>
-	<br/>	<br/><h4>Mail non envoyé : zones incorrectements remplis !</h4>
-	<br/>
-<?php
-	}
-	else
-	{
-		$flag = '1';
-	}
-}
-?>
