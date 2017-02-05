@@ -1,6 +1,8 @@
 <?php
-
-if (isset($_POST["mail"]) && isset($_POST["msg"]) && isset($_POST["obj"]))
+$flag = 0;
+if (filter_var($_POST["mail"], FILTER_VALIDATE_EMAIL))
+	$flag = 1;
+if (strlen($_POST["mail"]) != 0 && strlen($_POST["msg"]) != 0 && strlen($_POST["obj"]) != 0 && $flag == 1)
 {
 	$flag = 2;
 	if ($_POST["html"] == 'html')
@@ -22,9 +24,5 @@ else
 
 	<?php
 }
-$_POST["mail"] = "";
-$_POST["msg"] = "";
-$_POST["obj"] = "";
-$_POST["html"] = "txt";
 include("./contact.php");
 ?>
