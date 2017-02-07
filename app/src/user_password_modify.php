@@ -1,8 +1,4 @@
 <?php
-
-include __DIR__ . "/users_get.php";
-include __DIR__ . "/users_push.php";
-//include __DIR__ . "/users_modify.php";
 ?>
 
 <html>
