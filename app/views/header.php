@@ -1,5 +1,5 @@
 <header>
-  <center><h1><B> Vous êtes sur Camagru</B></h1></center>
+  <center><h1><B> Vous êtes sur Camagru (poil au ...)</B></h1></center>
 
   <nav>
     <ul>

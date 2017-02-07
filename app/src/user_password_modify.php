@@ -42,7 +42,7 @@ include __DIR__ . "/users_push.php";
                     //On verifie si l'email est valide
                     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
                     {
-                        $users = users_get();
+                        $users = getUsers();
                         foreach($users as $user)
                         {
                             if ($user['login'] === $_POST['login'] || $user['email'] === $_POST['email'])

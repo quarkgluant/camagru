@@ -1,7 +1,7 @@
 <html>
 <HEAD>
 	<title id="title-doc">Camagru</title>
-	<meta content="camagru; sangare; monnier; 42; école 42; php" name="keywords">
+	<meta content="camagru; sangare; cadiot; 42; école 42; php" name="keywords">
 	<Meta  charset = "UTF-8">
 		<link rel="stylesheet" href="../../public/css/application.css" />
 
@@ -17,16 +17,17 @@
 		<br/>
 <form method="post" action="../src/user_create.php">
 	Pseudo : <input type="text" name="login" value=""/>
-	Mail : <input type="email" name="mail" value=""/>
-	Mot de passe: <input type="password" name="passwd1" value=""/>
-	Vérification du mot de passe: <input type="password" name="passwd2" value=""/>
+	Mail : <input type="email" name="email" value=""/>
+	Mot de passe: <input type="password" name="password" value=""/>
+	Vérification du mot de passe: <input type="password" name="passverif" value=""/>
 	<input type="submit" name="submit" value="OK" />
 	<INPUT TYPE="reset" NAME="reset" VALUE="Effacer">
 </form>
 <br/>
+
 <br/>
 <br/>
-<a  href = "../../public/index.php"> Revenir à l'accueil !!!! </a>
+<a  href = "../../public/index.php"> Se connecter / Revenir à l'accueil !!!! </a>
 <br/>
 <br/>
 <br/>

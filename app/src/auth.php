@@ -1,18 +1,17 @@
 <?php
-
-include __DIR__ . "/users_get.php";
-include __DIR__ . "/users_push.php";
+include_once  __DIR__ . "/modeles/model.php";
 
 function auth($login, $passwd)
 {
-	$users = users_get();
+	$users = getUsers();
 
+    var_dump($users);
 	foreach($users as $entry)
 	{
 		if ($entry['login'] === $login)
 		{
 			$passwd_hash = hash('whirlpool', $passwd);
-			if ($passwd_hash == $entry['passwd'])
+			if ($passwd_hash == $entry['password'])
 			{
 				if (isset($entry['admin']))
 					return (2);

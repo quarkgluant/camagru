@@ -5,7 +5,7 @@ session_start();
 include("users_get.php");
 include("users_push.php");
 
-$users = users_get();
+$users = getUsers();
 
 foreach($users as $key => $user)
 {

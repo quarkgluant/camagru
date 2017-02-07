@@ -2,13 +2,13 @@
 
 header("Location: user_create_admin.php");
 
-include __DIR__ . "users_get.php";
-include __DIR__ . "users_push.php";
+include __DIR__ . "/modeles/model.php";
+// include __DIR__ . "users_push.php";
 
 if ($_POST['submit'] != 'OK' || strlen($_POST['login']) <= 0 || strlen($_POST['passwd']) <= 0)
 	exit("ERROR\n");
 
-$users = users_get();
+$users = getUsers();
 
 foreach($users as $user)
 {

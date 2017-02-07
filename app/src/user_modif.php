@@ -8,7 +8,7 @@ include("users_push.php");
 if ($_POST['submit'] != 'OK' || strlen($_POST['login']) <= 0 || strlen($_POST['oldpw']) <= 0 || strlen($_POST['newpw']) <= 0)
 	exit("ERROR\n");
 
-$users = users_get();
+$users = getUsers();
 
 foreach($users as $key => $user)
 {

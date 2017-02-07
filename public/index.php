@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+// require 'Controleur/Controleur.php';
 
 ?>
 <html>
@@ -22,7 +23,7 @@ session_start();
 	<br/>
 	<form method="post" action="../app/src/login.php">
 		Pseudo ou adresse mail: <input type="text" name="login" value=""/>
-		Mot de passe: <input type="password" name="passwd" value=""/>
+		Mot de passe: <input type="password" name="password" value=""/>
 		<input type="submit" name="submit" value="OK" />
 		<INPUT TYPE="reset" NAME="reset" VALUE="Effacer">
 	</form>

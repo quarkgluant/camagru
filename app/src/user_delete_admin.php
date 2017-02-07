@@ -7,7 +7,7 @@ header("Location: user_create_admin.php");
 include("users_get.php");
 include("users_push.php");
 
-$users = users_get();
+$users = getUsers();
 
 var_dump($_POST);
 
