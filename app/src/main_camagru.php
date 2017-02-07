@@ -14,6 +14,7 @@ session_start();
 
  <?php
 include('../js/confirm_del.js');
+include('../js/decor.js');
 ?>
 
 </script>
@@ -25,15 +26,29 @@ include('../js/confirm_del.js');
 ?>
 <hr/>
 <br/>
+<table>
+<tr>
+<td>
+
 <table  name="table1">
 <tr>
 
 <?php
 	include('../views/main.php');
 ?>
+</tr>
+</table>
+
+	</td>
+
+
+	<?php
+		include('../views/side.php');
+	?>
 
 </tr>
 </table>
+
 <br/>
 
 <?php

@@ -28,10 +28,6 @@
              </video>
       </td>
 
-      <?php
-      	include('../views/side.php');
-      ?>
-
     </tr>
     <tr>
     <td>
@@ -42,11 +38,12 @@
         </td>
         <td>
          <div id="container2">
-        <img id="imgtag" src="" width="500" height="375" alt="capture d'image" />
-      </div>
+        <img id="imgtag" src="" width="500" height="375" alt="capture d'image" style="position:absolute;z-index:1;"/>
+        <img id="imgtag2" src="" width="500" height="375" style="position:absolute;z-index:2;"/>
+        </div>
     </td>
 </tr>
 </table>
-<input type="reset"> 
+<input type="reset">
 </form>
 </td>
