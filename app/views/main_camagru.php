@@ -30,7 +30,7 @@ include __DIR__ . '/../../public/js/decor.js';
 <tr>
 <td>
 
-<table  name="table1">
+<table  name = "table1">
 <tr>
 
 <?php
@@ -58,7 +58,7 @@ include __DIR__ . '/../../public/js/decor.js';
 <script>
 
  <?php
-include('../js/camera.js');
+ include __DIR__ . '/../../public/js/camera.js';
 ?>
 
 </script>
