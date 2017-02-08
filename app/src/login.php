@@ -19,6 +19,6 @@ else
 	$_SESSION['loggued_on_user'] = "";
 }
 
-include_once __DIR__ . '/main_camagru.php'
+include_once __DIR__ . '/../views/main_camagru.php'
 
 ?>
