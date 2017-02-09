@@ -34,6 +34,7 @@ if (isset($_POST['login'], $_POST['password'], $_POST['passverif'], $_POST['emai
                       );
                     // var_dump($user);
                     saveUser($user);
+                    $_SESSION['passwd_hash'] = $passwd_hash;
                     $message = 'Vous avez bien été inscrit. Vous pouvez dorénavant vous connecter.';
 
                 }
@@ -48,13 +49,14 @@ if (isset($_POST['login'], $_POST['password'], $_POST['passverif'], $_POST['emai
                         }
                         else
                         {
-                            $passwd_hash = hash('whirlpool', $_POST['passwd']);
+                            $passwd_hash = hash('whirlpool', $_POST['password']);
                             $user = array(
                                 'login' => $_POST['login'],
                                 'email' => $_POST['email'],
                                 'password' => $passwd_hash
                               );
                             var_dump($user);
+                            $_SESSION['passwd_hash'] = $passwd_hash;
                             saveUser($user);
                             $message = 'Vous avez bien été inscrit. Vous pouvez dorénavant vous connecter.';
                         }
