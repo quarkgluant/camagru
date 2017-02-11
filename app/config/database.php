@@ -1,4 +1,5 @@
 <?php
-$dsn = "mysql:host=localhost;dbname=camagru;charset=utf8";
-$db_user = 'root';
-$db_pass = 'root';
+$DB_NAME = 'camagru';
+$DSN = "mysql:host=localhost;dbname={$DB_NAME};charset=utf8";
+$DB_USER = 'root';
+$DB_PASS = 'root';

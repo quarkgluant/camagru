@@ -4,9 +4,6 @@
         <p><B><I>Modification de votre mot de passe :</I></B></p>
         <br/>
         <br/>
-<?php
-	include __DIR__ . '../../src/password_modify.php';
-?>
     <table>
           <tr>
             <td>

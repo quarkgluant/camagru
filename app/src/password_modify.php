@@ -1,4 +1,5 @@
 <?php
+include __DIR__ . "/../views/main_user_password_modify.php";
 //On verifie que le formulaire a ete envoye
 if (isset($_POST['login'], $_POST['password'], $_POST['passverif'], $_POST['email']))
 {

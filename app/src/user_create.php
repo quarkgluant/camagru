@@ -8,10 +8,10 @@ include __DIR__ . "/../views/user_create.php";
 //On verifie que le formulaire a ete envoye
 if (isset($_POST['login'], $_POST['password'], $_POST['passverif'], $_POST['email']))
 {
-    $_POST['login'] = trim($_POST['login']);
-    $_POST['password'] = trim($_POST['password']);
-    $_POST['passverif'] = trim($_POST['passverif']);
-    $_POST['email'] = trim($_POST['email']);
+    $_POST['login'] = htmlspecialchars(trim($_POST['login']));
+    $_POST['password'] = htmlspecialchars(trim($_POST['password']));
+    $_POST['passverif'] = htmlspecialchars(trim($_POST['passverif']));
+    $_POST['email'] = htmlspecialchars(trim($_POST['email']));
 
     // On verifie si le mot de passe et celui de la verification sont identiques
     if($_POST['password'] == $_POST['passverif'])

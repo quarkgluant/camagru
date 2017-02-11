@@ -3,7 +3,7 @@
 
   <nav>
     <ul>
-      <li><a href="user_password_modify.php">Modifier son mot de passe !</a></li>
+      <li><a href="../src/password_modify.php">Modifier son mot de passe !</a></li>
       <li><a href="javascript:confirmDel()">Supprimer son compte !</a></li>
       <li><a href="./contact.php">Contacts</a></li>
     </br>
