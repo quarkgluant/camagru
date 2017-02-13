@@ -40,6 +40,6 @@ Votre message : </td><td><TEXTAREA name="msg" rows=10 cols=120 wrap="physical" /
 </table>
 <br/>	<br/>
 <br/>
-<a  href = "./main_camagru.php"> Revenir à la page précédente !!!! </a>
+<a  href = "views/main_camagru.php"> Revenir à la page précédente !!!! </a>
 <br/>
 <br/><br/>
