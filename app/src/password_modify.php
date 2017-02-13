@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . "/../views/main_user_password_modify.php";
+include_once __DIR__ . "/views/main_user_password_modify.php";
 //On verifie que le formulaire a ete envoye
 if (isset($_POST['login'], $_POST['password'], $_POST['passverif'], $_POST['email']))
 {
@@ -53,6 +53,6 @@ if (isset($_POST['login'], $_POST['password'], $_POST['passverif'], $_POST['emai
         //Sinon, on dit que les mots de passes ne sont pas identiques
         $message = 'Les mots de passe que vous avez entré ne sont pas identiques.';
     }
-    include __DIR__ . "/../views/messages.php";
+    include __DIR__ . "/views/messages.php";
 
 }
