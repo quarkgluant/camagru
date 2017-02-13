@@ -14,7 +14,7 @@
 <body>
 
 <?php
-	include('../views/header.php');
+	include('views/header.php');
 ?>
 <hr/>
 <br/>
@@ -22,7 +22,7 @@
 <tr>
 
 <?php
-	include('../views/contact_main.php');
+	include('views/contact_main.php');
 ?>
 
 </tr>
@@ -30,7 +30,7 @@
 <br/>
 
 <?php
-	include('../views/footer.php');
+	include('views/footer.php');
 ?>
 
 </body>
