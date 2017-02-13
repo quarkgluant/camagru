@@ -35,6 +35,6 @@
                 <br/>
                 <br/>
                 <br/>
-                <i><a  href = "./main_camagru.php"> Revenir à la page précédente !!!! </a></i>
+                <i><a  href = "views/main_camagru.php"> Revenir à la page précédente !!!! </a></i>
                 <br/>
                 <br/>
