@@ -13,22 +13,22 @@ session_start();
 <body>
 
 <?php
-	include '../views/header.php';
+	include 'views/header.php';
 ?>
 
 <table>
 <tr>
 
 <?php
-	include '../views/main.php';
-	include '../views/side.php';
+	include 'views/main.php';
+	include 'views/side.php';
 ?>
 
 </tr>
 </table>
 <br/>
 <?php
-	include '../views/footer.php';
+	include 'views/footer.php';
 ?>
 </body>
 </html>

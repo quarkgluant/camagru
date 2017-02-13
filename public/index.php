@@ -33,7 +33,7 @@ session_start();
 	<br/>
 
 <?php
-require '../app/src/auth.php';
+require __DIR__ .'/../app/src/controleur/controleur.php';
 if (strlen($_SESSION['loggued_on_user']) > 0)
 {
 ?>

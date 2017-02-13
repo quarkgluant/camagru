@@ -1,39 +1,23 @@
 <?php
-?>
 
-<html>
-<HEAD>
-    <title id="title-doc">Camagru</title>
-    <meta content="camagru; sangare; cadiot; 42; école 42; php" name="keywords">
-    <Meta  charset = "UTF-8">
-        <link rel="stylesheet" href="../../public/css/application.css" />
-    </head>
+include __DIR__ . "/modeles/model.php";
+// include __DIR__ . "/users_push.php";
 
-    <body>
-        <center><B><h1>Ouvrez vous à la magie de Camagru !</h1></B></center>
-        <br/>
-        <br/>
-        <br/>
-        <p><B><I>Modification de votre mot de passe :</I></B></p>
-        <br/>
-        <br/>
-        <?php
+include __DIR__ . "/../views/user_modif.php";
+
         //On verifie que le formulaire a ete envoye
-        if (isset($_POST['login'], $_POST['password'], $_POST['passverif'], $_POST['email']))
+        if (isset($_POST['login'], $_POST['oldpw'], $_POST['newpw'], $_POST['newpwverif']))
         {
-            // On enleve lechappement si get_magic_quotes_gpc est active
-            if(get_magic_quotes_gpc())
-            {
-                $_POST['login'] = stripslashes($_POST['login']);
-                $_POST['password'] = stripslashes($_POST['password']);
-                $_POST['passverif'] = stripslashes($_POST['passverif']);
-                $_POST['email'] = stripslashes($_POST['email']);
-            }
+            $_POST['login'] = trim($_POST['login']);
+            $_POST['oldpw'] = trim($_POST['oldpw']);
+            $_POST['newpw'] = trim($_POST['newpw']);
+            $_POST['newpwverif'] = trim($_POST['newpwverif']);
+
             // On verifie si le mot de passe et celui de la verification sont identiques
-            if($_POST['password'] == $_POST['passverif'])
+            if($_POST['newpw'] == $_POST['newpwverif'])
             {
                 //On verifie si le mot de passe a 8 caracteres ou plus
-                if(strlen($_POST['password']) >= 8)
+                if(strlen($_POST['newpw']) >= 8)
                 {
                     //On verifie si l'email est valide
                     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
@@ -41,7 +25,7 @@
                         $users = getUsers();
                         foreach($users as $user)
                         {
-                            if ($user['login'] === $_POST['login'] || $user['email'] === $_POST['email'])
+                            if ($user['login'] === $_POST['login'])
                             {
                                 //Sinon, on dit que le pseudo voulu est deja pris
                                 $form = true;
@@ -50,17 +34,12 @@
                             else
                             {
                                 $passwd_hash = hash('whirlpool', $_POST['passwd']);
-                                $users[] = array('login' => $_POST['login'], 'email' => $_POST['email'], 'passwd' => $passwd_hash);
-                                users_push($users);
+                                $user = array('login' => $_POST['login'], 'email' => $_POST['email'], 'password' => $passwd_hash);
+                                saveUser($user);
                                 //Si ca a fonctionne, on naffiche pas le formulaire
-                                $form = false;
-                                ?>
-
-
-                                <div class="message">Vous avez bien été inscrit. Vous pouvez dorénavant vous connecter.<br/><br/>
+                                    <div class="message">Vous avez bien été inscrit. Vous pouvez dorénavant vous connecter.<br/><br/>
                                     <a href="../../public/index.php">Se connecter</a></div>
 
-                                    <?php
                                 }
                             }
                         }
@@ -135,7 +114,7 @@
                 <br/>
                 <a  href = "../../public/index.php"> Revenir à l'accueil !!!! </a>
                 <br/>
-                <a  href = "./main_camagru.php"> Revenir à la page précédente !!!! </a>
+                <a  href = "../views/main_camagru.php"> Revenir à la page précédente !!!! </a>
                 <br/>
                 <br/>
                 <br/>
