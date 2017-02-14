@@ -60,7 +60,7 @@ function identificationUser() {
                                             'email' => $_POST['email'],
                                             'password' => $passwd_hash
                                         );
-                                        var_dump($user);
+                                        // var_dump($user);
                                         $_SESSION['passwd_hash'] = $passwd_hash;
                                         saveUser($user);
                                         $message = 'Vous avez bien été inscrit. Vous pouvez dorénavant vous connecter.';
@@ -98,7 +98,7 @@ function auth($login, $passwd)
 {
 	$users = getUsers();
 
-    var_dump($users);
+    // var_dump($users);
 	foreach($users as $entry)
 	{
 		if ($entry['login'] === $login)

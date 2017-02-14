@@ -19,6 +19,6 @@ else
 	$_SESSION['loggued_on_user'] = "";
 }
 
-include __DIR__ . '/views/main_camagru.php'
+header("Location: ./views/main_camagru.php");
 
 ?>
