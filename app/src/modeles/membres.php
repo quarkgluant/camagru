@@ -20,7 +20,7 @@ function getUsers() {
     $bdd = getBdd();
     $users = $bdd->query('select USER_LOGIN as login,'
             . ' USER_EMAIL as email, USER_PASSWORD as password'
-            . ' from T_USERS')->fetchAll();
+            . ' from T_USERS')->fetchAll(PDO::FETCH_ASSOC);
     return $users;
 }
 
