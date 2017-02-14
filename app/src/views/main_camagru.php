@@ -8,16 +8,16 @@ session_start();
 	<title id="title-doc">Camagru</title>
 	<meta content="camagru; sangare,cadiot,42,école 42,php,HTML5,webcam,cybercaméra,caméra,getUserMedia,device,multimédia,vidéo,MediaStream" name="keywords">
 	<Meta  charset = "UTF-8">
-<meta name="viewport" content="initial-scale=1.0,width=device-width" />
-<link rel="stylesheet" href="/base/public/css/application.css" />
-<script>
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <link rel="stylesheet" href="/base/public/css/application.css" />
+    <script>
 
- <?php
-include __DIR__ . '/../../../public/js/confirm_del.js';
-include __DIR__ . '/../../../public/js/decor.js';
-?>
+     <?php
+    include __DIR__ . '/../../../public/js/confirm_del.js';
+    include __DIR__ . '/../../../public/js/decor.js';
+    ?>
 
-</script>
+    </script>
 </HEAD>
 <body>
 
