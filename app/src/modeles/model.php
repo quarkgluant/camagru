@@ -20,7 +20,7 @@ function getUsers() {
     $bdd = getBdd();
     $users = $bdd->query('select USER_LOGIN as login,'
             . ' USER_EMAIL as email, USER_PASSWORD as password'
-            . ' from T_USERS')->fetchAll();
+            . ' from users')->fetchAll(PDO::FETCH_ASSOC);
     return $users;
 }
 
@@ -28,7 +28,7 @@ function saveUser(array $user)
 {
     $bdd = getBdd();
     $statement = $bdd->prepare(
-        'insert into T_USERS
+        'insert into users
         (USER_LOGIN, USER_PASSWORD, USER_EMAIL)
         values
         (:login, :password, :email)'
@@ -43,6 +43,6 @@ function saveUser(array $user)
 function countAll()
 {
     $bdd = getBdd();
-    $count = $bdd->query('select count(*) from T_USERS')->fetchColumn();
+    $count = $bdd->query('select count(*) from users')->fetchColumn();
     return $count;
 }
