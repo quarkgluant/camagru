@@ -9,9 +9,9 @@
 </center>
 Modification de votre mot de passe :		<br/>	<br/>
 <form method="post" action="user_modif.php">
-	Identifiant : <input type="text" name="login" required/>
-	Ancien mot de passe : <input type="password" name="oldpw" required/>
-	Nouveau mot de passe : <input type="password" name="newpw" required/>
+	Identifiant : <input type="text" name="login" placeholder="login" required/>
+	Ancien mot de passe : <input type="password" name="oldpw" placeholder="votre ancien mot de passe" required/>
+	Nouveau mot de passe : <input type="password" name="newpw" placeholder="votre nouvO mpt de passe" required/>
 	<input type="submit" name="submit" value="OK" />
 </form>
 

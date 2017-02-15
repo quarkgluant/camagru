@@ -8,21 +8,21 @@
           <tr>
             <td>
                 <form method="post">
-                Pseudo.........................: <input type="text" name="login" value="" required/>
+                Pseudo.........................: <input type="text" name="login" placeholder="login"  required/>
             </td>
             <td>
-                Mail....................................................: <input type="email" name="email" value=""/>
+                Mail....................................................: <input type="email" name="email" placeholder="votre mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
             </td>
             <td>
-                Ancien mot de passe: <input type="password" name="password" value="" required/>
+                Ancien mot de passe: <input type="password" name="password" placeholder="ancien mot de passe" required/>
             </td>
         </tr>
         <tr>
             <td>
-                Nouveau mot de passe: <input type="password" name="passwordnew1" value="" required/>
+                Nouveau mot de passe: <input type="password" name="passwordnew1" placeholder="nouveau mot de passe" required/>
             </td>
             <td>
-            Vérification du nouveau mot de passe: <input type="password" name="passnewverif" value="" required/>
+            Vérification du nouveau mot de passe: <input type="password" name="passnewverif" placeholder="nouveau mot de passe" required/>
             </td>
             <td>
             </td>

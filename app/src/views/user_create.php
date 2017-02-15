@@ -16,10 +16,10 @@
 		<br/>
 		<br/>
 <form method="post" action="../src/user_create.php">
-	Pseudo : <input type="text" name="login" value="" required/>
-	Mail : <input type="email" name="email" value="" required/>
-	Mot de passe: <input type="password" name="password" value="" required/>
-	Vérification du mot de passe: <input type="password" name="passverif" value="" required/>
+	Pseudo : <input type="text" name="login" placeholder="login" required/>
+	Mail : <input type="email" name="email" placeholder="votre mail" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
+	Mot de passe: <input type="password" name="password" placeholder="votre mot de passe" required/>
+	Vérification du mot de passe: <input type="password" name="passverif" placeholder="votre mot de passe" required/>
 	<input type="submit" name="submit" value="OK" />
 	<INPUT TYPE="reset" NAME="reset" VALUE="Effacer">
 </form>
