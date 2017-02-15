@@ -24,43 +24,42 @@ session_start();
 <?php
 	include __DIR__ . '/header.php';
 ?>
-<hr/>
-<br/>
-<table>
-<tr>
-<td>
+    <hr/>
+    <br/>
+    <table>
+        <tr>
+            <td>
 
-<table  name = "table1">
-<tr>
+                <table  name = "table1">
+                    <tr>
 
-<?php
-	include __DIR__ . '/main.php';
-?>
-</tr>
-</table>
+                    <?php
+                    	include __DIR__ . '/main.php';
+                    ?>
+                    </tr>
+                </table>
 
-	</td>
+        	</td>
 
 
-	<?php
-		include __DIR__ . '/side.php';
-	?>
+        	<?php
+        		include __DIR__ . '/side.php';
+        	?>
 
-</tr>
-</table>
+        </tr>
+    </table>
 
-<br/>
+    <br/>
 
-<?php
-	include __DIR__ . '/footer.php';
-?>
+    <?php
+    	include __DIR__ . '/footer.php';
+    ?>
 
-<script>
+    <script>
+     <?php
+     include __DIR__ . '/../../../public/js/camera.js';
+     ?>
 
- <?php
- include __DIR__ . '/../../../public/js/camera.js';
-?>
-
-</script>
+    </script>
 </body>
 </html>
