@@ -2,10 +2,10 @@
 require_once __DIR__ . '/../modeles/model.php';
 
 // Affiche la liste de tous les billets du blog
-function accueil() {
-    $users = getUsers();
-    require 'Vue/vueAccueil.php';
-}
+// function accueil() {
+//     $users = getUsers();
+//     require 'Vue/vueAccueil.php';
+// }
 
 // vérifie identification utilisateur
 function identificationUser() {
@@ -179,14 +179,14 @@ function password_modify() {
     }
 }
 
-// Affiche les détails sur un billet
-function billet($idBillet) {
-    $billet = getBillet($idBillet);
-    $commentaires = getCommentaires($idBillet);
-    require 'Vue/vueBillet.php';
-}
-
-// Affiche une erreur
-function erreur($msgErreur) {
-    require 'Vue/vueErreur.php';
-}
+// // Affiche les détails sur un billet
+// function billet($idBillet) {
+//     $billet = getBillet($idBillet);
+//     $commentaires = getCommentaires($idBillet);
+//     require 'Vue/vueBillet.php';
+// }
+//
+// // Affiche une erreur
+// function erreur($msgErreur) {
+//     require 'Vue/vueErreur.php';
+// }
