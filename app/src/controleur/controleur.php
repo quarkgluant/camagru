@@ -31,7 +31,7 @@ function identificationUser() {
                             // var_dump($users);
                             if (empty($users))
                             {
-                                $passwd_hash = hash('whirlpool', $_POST['passwd']);
+                                $passwd_hash = hash('whirlpool', $_POST['password']);
                                 $user = array(
                                     'login' => $_POST['login'],
                                     'email' => $_POST['email'],
@@ -101,7 +101,7 @@ function auth($login, $passwd)
     // var_dump($users);
 	foreach($users as $entry)
 	{
-		if ($entry['login'] === $login)
+		if ($entry['login'] == $login)
 		{
 			$passwd_hash = hash('whirlpool', $passwd);
 			if ($passwd_hash == $entry['password'])
