@@ -20,11 +20,10 @@ session_start();
     </script>
 </HEAD>
 <body>
-
-<?php
-	include __DIR__ . '/header.php';
-?>
-    <hr/>
+    <?php
+        include __DIR__ . '/header.php';
+    ?>
+     <hr/>
     <br/>
     <table>
         <tr>
@@ -32,20 +31,18 @@ session_start();
 
                 <table  name = "table1">
                     <tr>
+                        <?php
+                            include __DIR__ . '/main.php';
+                        ?>
 
-                    <?php
-                    	include __DIR__ . '/main.php';
-                    ?>
                     </tr>
                 </table>
 
         	</td>
 
-
-        	<?php
-        		include __DIR__ . '/side.php';
-        	?>
-
+            <?php
+                include __DIR__ . '/side.php';
+            ?>
         </tr>
     </table>
 
