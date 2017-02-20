@@ -2,6 +2,7 @@
 
 session_start();
 // require 'Controleur/Controleur.php';
+require __DIR__ .'/../app/src/controleur/controleur.php';
 
 ?>
 <html>
@@ -33,7 +34,6 @@ session_start();
 	<br/>
 
 <?php
-require __DIR__ .'/../app/src/controleur/controleur.php';
 if (strlen($_SESSION['loggued_on_user']) > 0)
 {
 ?>
