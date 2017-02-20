@@ -11,6 +11,7 @@ define('CHEMIN_VUE',    'app/src/views/');
 define('CHEMIN_MODELE', 'app/src/modeles/');
 
 require_once('database.php');
-$db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
 $sql = file_get_contents('base.sql');
+$db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
 $qr = $db->exec($sql);
+echo 'setup completed'.PHP_EOL;
