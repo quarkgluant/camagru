@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../modeles/model.php';
+require_once __DIR__ . '/../modeles/membres.php';
 
 // Affiche la liste de tous les billets du blog
 // function accueil() {
