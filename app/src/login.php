@@ -22,7 +22,3 @@ else
 	$_SESSION['loggued_on_user'] = "";
     header("Location: ../../public/index.php");
 }
-
-
-
-?>

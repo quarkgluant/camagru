@@ -9,7 +9,18 @@ session_start();
 	<meta content="camagru; sangare,cadiot,42,école 42,php,HTML5,webcam,cybercaméra,caméra,getUserMedia,device,multimédia,vidéo,MediaStream" name="keywords">
 	<Meta  charset = "UTF-8">
     <meta name="viewport" content="initial-scale=1.0,width=device-width" />
-    <link rel="stylesheet" href="/base/public/css/application.css" />
+    <?php
+    // echo "__DIR__ = " .basename(__DIR__);
+        if (basename(__DIR__) === "src"){
+            $href = __DIR__ . '/../../public/css/application.css';
+        }
+        elseif (basename(__DIR__) === "views") {
+            $href = __DIR__ . '/../../../public/css/application.css';
+        }
+        // echo "$href";
+     ?>
+    <link rel="stylesheet" href=<?php "'".$href."'" ?> />
+    <?= "{$href}" ?>
     <script>
 
      <?php
