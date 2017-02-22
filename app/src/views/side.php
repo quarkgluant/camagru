@@ -9,8 +9,9 @@
     $nb_fichier = 0;
     echo '<form method="post" action="javascript:decor()"><select id="decor">';
     //echo '<ul>';
-    $dossier_ref = '../../public/img/decor';
-if($dossier = opendir('../../public/img/decor'))
+    // echo __DIR__;
+    $dossier_ref = '../../../public/img/decor';
+if($dossier = opendir('../../../public/img/decor'))
   {
     while(false !== ($fichier = readdir($dossier)))
     {
