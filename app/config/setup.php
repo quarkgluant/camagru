@@ -11,7 +11,10 @@ define('CHEMIN_VUE',    'app/src/views/');
 define('CHEMIN_MODELE', 'app/src/modeles/');
 
 require_once('database.php');
-$sql = file_get_contents('base.sql');
 $db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
+$sql = "CREATE DATABASE camagru;";
 $qr = $db->exec($sql);
+$sql = "USE camagru ;";
+$qr = $db->exec($sql);
+$sql = file_get_contents('base.sql');
 echo 'setup completed'.PHP_EOL;
