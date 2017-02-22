@@ -1,6 +1,6 @@
 <?php
 
-include_once __DIR__ . "/modeles/model.php";
+include_once __DIR__ . "/modeles/membres.php";
 include_once __DIR__ . "/controleur/controleur.php";
 include_once __DIR__ . "/views/user_create.php";
 
