@@ -10,17 +10,14 @@ session_start();
 	<Meta  charset = "UTF-8">
     <meta name="viewport" content="initial-scale=1.0,width=device-width" />
     <?php
-    // echo "__DIR__ = " .basename(__DIR__);
         if (basename(__DIR__) === "src"){
-            $href = __DIR__ . '/../../public/css/application.css';
+            $href = "../../public/css/application.css";
         }
         elseif (basename(__DIR__) === "views") {
-            $href = __DIR__ . '/../../../public/css/application.css';
+            $href = "../../../public/css/application.css";
         }
-        // echo "$href";
      ?>
-    <link rel="stylesheet" href=<?php "'".$href."'" ?> />
-    <?= "{$href}" ?>
+    <link rel="stylesheet" <?= "href="."'".$href."'" ?> />
     <script>
 
      <?php
