@@ -40,7 +40,7 @@ session_start();
                 <table  name = "table1">
                     <tr>
                         <?php
-                            include __DIR__ . '/main.php';
+                             include __DIR__ . '/main.php';
                         ?>
 
                     </tr>
