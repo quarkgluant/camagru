@@ -2,25 +2,27 @@
 
 // Effectue la connexion à la BDD
 // Instancie et renvoie l'objet PDO associé
-function getBdd() {
+function getBdd()
+{
     $dsn = "mysql:host=localhost;dbname=camagru;charset=utf8";
     $db_user = 'root';
     $db_pass = 'root';
     $bdd = new PDO($dsn,
-                $db_user,
-                $db_pass,
-                array(
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-                ) );
+        $db_user,
+        $db_pass,
+        array(
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        ));
     return $bdd;
 }
 
 // Renvoie la liste des utilisateurs
-function getUsers() {
+function getUsers()
+{
     $bdd = getBdd();
     $users = $bdd->query('select USER_LOGIN as login,'
-            . ' USER_EMAIL as email, USER_PASSWORD as password'
-            . ' from T_USERS')->fetchAll(PDO::FETCH_ASSOC);
+        . ' USER_EMAIL as email, USER_PASSWORD as password'
+        . ' from T_USERS')->fetchAll(PDO::FETCH_ASSOC);
     return $users;
 }
 
@@ -47,19 +49,20 @@ function countAll()
     return $count;
 }
 
-function maj_user(array $user) {
+function maj_user(array $user)
+{
 
     $bdd = getBdd();
 
-	$requete = $pdo->prepare("UPDATE T_USERS SET
+    $requete = $pdo->prepare("UPDATE T_USERS SET
         password = :password,
         email = :email
 		WHERE
         login = :login");
 
-	$requete->bindParam(':login', $user['login']);
-	$requete->bindParam(':password', $user['password']);
+    $requete->bindParam(':login', $user['login']);
+    $requete->bindParam(':password', $user['password']);
     $requete->bindParam(':email', $user['email']);
 
-	return $requete->execute();
+    return $requete->execute();
 }
