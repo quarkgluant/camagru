@@ -5,7 +5,15 @@
           name="keywords">
     <Meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0,width=device-width"/>
-    <link rel="stylesheet" href='../../../public/css/application.css'/>
+    <?php
+    if (basename(__DIR__) === "src"){
+        $href = "../../public/css/application.css";
+    }
+    elseif (basename(__DIR__) === "views") {
+        $href = "../../../public/css/application.css";
+    }
+    ?>
+    <link rel="stylesheet" <?= "href="."'".$href."'" ?> />
     <script>
 
         function confirmDel() {
