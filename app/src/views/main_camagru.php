@@ -28,9 +28,9 @@
 
         function decor() {
             select = document.getElementById("decor");
-            choice = select.selectedIndex  // Récupération de l'index du <option> choisi
+            choice = select.selectedIndex;  // Récupération de l'index du <option> choisi
             valeur_cherchee = select.options[choice].value; // Récupération de la valeur du <option> choisi
-            img = "imgtag2";// Nom de l'image
+            img = document.getElementById("imgtag2");// Nom de l'image
             img.src = valeur_cherchee;
             var r = confirm(valeur_cherchee);
         }
@@ -103,7 +103,7 @@
                                         <div id="container2">
                                             <img id="imgtag" src="" width="500" height="375" alt="capture d'image"
                                                  style="position:absolute;z-index:1;"/>
-                                            <img id="imgtag2" src="" width="500" height="375"
+                                            <img id="imgtag3" src="" width="500" height="375"
                                                  style="position:absolute;z-index:2;"/>
                                         </div>
                                     </td>
@@ -142,8 +142,8 @@
                 </select><input type="submit" value="Afficher le décor choisi"/></form>
             </br></br>Vous avez le choix entre <strong>13</strong> décors différents
         <td>
-            <div id="container3">
-                <img id="imgtag2" src="" width="75" height="75"/>
+            <div>
+                <img id="imgtag2" src=""  width="75" height="75"/>
             </div>
         </td>
         </td>

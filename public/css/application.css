@@ -79,6 +79,9 @@ width:20%;
     height: 375px;
     border: 10px red solid;
 }
+#imgtag2 {
+    border: 10px red solid;
+}
 .copyright {
 font-style : italic ;
 font-family : monospace ;
