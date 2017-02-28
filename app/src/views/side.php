@@ -31,7 +31,7 @@
     echo 'Le dossier n\' a pas pu être ouvert';
     ?>
     <td>
-     <div id="container3">
+     <div>
     <img id="imgtag2" src="" width="75" height="75"/>
     </div>
 </td>
