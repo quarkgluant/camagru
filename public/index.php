@@ -23,8 +23,12 @@ require __DIR__ .'/../app/src/controleur/controleur.php';
 	<br/>
 	<br/>
 	<form method="post" action="../app/src/login.php">
-		Pseudo ou adresse mail: <input type="text" name="login" placeholder="login"/>
-		Mot de passe: <input type="password" name="password" placeholder="mot de passe"/>
+		Pseudo ou adresse mail: <input type="text" name="login" placeholder="login" 		value="Login..."
+		onfocus="if(this.value=='Login...'){this.value=''};"
+		onblur="if(this.value==''){this.value='Login...'};"/>
+		Mot de passe: <input type="password" name="password" placeholder="mot de passe" value="..."
+		onfocus="if(this.value=='...'){this.value=''};"
+		onblur="if(this.value==''){this.value='...'};"/>
 		<input type="submit" name="submit" value="OK" />
 		<INPUT TYPE="reset" NAME="reset" VALUE="Effacer">
 	</form>

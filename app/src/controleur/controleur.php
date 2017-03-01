@@ -130,7 +130,7 @@ function password_modify() {
                             {
                               $passwd_hash = hash('whirlpool', $_POST['passnew']);
                               $users = array('login' => $_SESSION['loggued_on_user'], 'email' => $user['email'], 'password' => $passwd_hash);
-                              saveUser($user);
+                              maj_user($user);
                               //Si ca a fonctionne, on naffiche pas le formulaire
                               $message = "Votre mot de passe vient d'être correctement modifié.";
 

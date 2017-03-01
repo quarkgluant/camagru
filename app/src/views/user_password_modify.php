@@ -8,12 +8,12 @@
         </tr>
         <tr>
             <td>
-                Nouveau mot de passe: <input type="password" name="passnew" placeholder="nouveau mot de passe"
+                Nouveau mot de passe: <input type="password" name="passnew" placeholder="..."
                                              required/>
             </td>
             <td>
                 Vérification du nouveau mot de passe: <input type="password" name="passnewverif"
-                                                             placeholder="nouveau mot de passe" required/>
+                                                             placeholder="...." required/>
             </td>
             <td>
             </td>

@@ -49,6 +49,13 @@ border: 1px solid black;
 .main {
 width:20%;
 }
+input[type=submit]:hover, input[type=reset]:hover {
+ background-color:#FCDEDE;
+ }
+input[type=submit]:active, input[type=reset]:active {
+ background-color:#FCDEDE;
+ box-shadow:1px 1px 1px #D83F3D inset;
+}
 #container {
     margin: 0px auto;
     width: 500px;
