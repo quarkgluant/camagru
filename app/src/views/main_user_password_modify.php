@@ -1,5 +1,7 @@
 <?php
 session_start();
+include_once __DIR__ . "/../modeles/membres.php";
+include_once __DIR__ . "/../controleur/controleur.php";
 
 ?>
 
@@ -34,6 +36,8 @@ session_start();
                 <tr>
                 <?php
                   include __DIR__ . '/user_password_modify.php';
+                  $message = password_modify();
+                // echo $modification;
                 ?>
 
           </tr>
@@ -43,8 +47,8 @@ session_start();
 
 
             <?php
+            include_once __DIR__ . "/messages.php";
             include __DIR__ . '/footer.php';
-            include __DIR__ . "/messages.php";
             ?>
         </body>
         <?php

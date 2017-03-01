@@ -1,10 +1,11 @@
+
 <td>
     <br/>
     <p><B><I>Modification de votre mot de passe :</I></B></p>
     <br/>
     <table>
         <tr>
-                <form method="post"  action="../password_modify.php">
+                <form method="post" >
         </tr>
         <tr>
             <td>

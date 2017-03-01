@@ -11,7 +11,7 @@ session_start();
     <HEAD>
         <title id="title-doc">Camagru</title>
         <meta content="camagru; sangare,cadiot,42,école 42,php,HTML5,webcam,cybercaméra,caméra,getUserMedia,device,multimédia,vidéo,MediaStream" name="keywords">
-        <Meta  charset = "UTF-8">
+        <Meta charset = "UTF-8">
         <meta name="viewport" content="initial-scale=1.0,width=device-width" />
         <?php
         if (basename(__DIR__) === "src"){
