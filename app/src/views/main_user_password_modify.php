@@ -1,43 +1,52 @@
-<td>
-    <br/>
-    <p><B><I>Modification de votre mot de passe :</I></B></p>
-    <br/>
-    <br/>
-    <table>
-        <tr>
-            <td>
-                <form method="post">
-                    Pseudo.........................: <input type="text" name="login" placeholder="login" required/>
-            </td>
-            <td>
-                Mail....................................................: <input type="email" name="email"
-                                                                                 placeholder="votre mail"
-                                                                                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
-            </td>
-            <td>
-                Ancien mot de passe: <input type="password" name="password" placeholder="ancien mot de passe" required/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Nouveau mot de passe: <input type="password" name="passwordnew1" placeholder="nouveau mot de passe"
-                                             required/>
-            </td>
-            <td>
-                Vérification du nouveau mot de passe: <input type="password" name="passnewverif"
-                                                             placeholder="nouveau mot de passe" required/>
-            </td>
-            <td>
-            </td>
-        </tr>
-    </table>
-    <input type="submit" name="submit" value="OK"/>
-    <INPUT TYPE="reset" NAME="reset" VALUE="Effacer">
-    </form>
+<?php
+session_start();
 
-    <br/>
-    <br/>
-    <br/>
-    <i><a href="views/main_camagru.php"> Revenir à la page précédente !!!! </a></i>
-    <br/>
-    <br/>
+?>
+
+<HTML>
+  <?php
+  if (strlen($_SESSION['loggued_on_user']) > 0)
+  {
+  ?>
+    <HEAD>
+        <title id="title-doc">Camagru : changement de mot de passe !</title>
+        <meta content="camagru; sangare,cadiot,42,école 42,php,HTML5,webcam,cybercaméra,caméra,getUserMedia,device,multimédia,vidéo,MediaStream" name="keywords">
+        <Meta  charset = "UTF-8">
+        <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+        <?php
+        if (basename(__DIR__) === "src"){
+            $href = "../../public/css/application.css";
+        }
+        elseif (basename(__DIR__) === "views") {
+            $href = "../../../public/css/application.css";
+        }
+        ?>
+        <link rel="stylesheet" <?= "href="."'".$href."'" ?> />
+        </HEAD>
+        <body>
+
+            <?php
+            include __DIR__ . '/header.php';
+            ?>
+            <hr/>
+            <br/>
+            <table>
+                <tr>
+                <?php
+                  include __DIR__ . '/user_password_modify.php';
+                ?>
+
+          </tr>
+            </table>
+
+            <br/>
+
+
+            <?php
+            include __DIR__ . '/footer.php';
+            ?>
+        </body>
+        <?php
+        }
+        ?>
+</html>

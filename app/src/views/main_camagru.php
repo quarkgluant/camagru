@@ -1,7 +1,5 @@
 <?php
 session_start();
-// require 'Controleur/Controleur.php';
-require '../controleur/controleur.php';
 
 ?>
 
