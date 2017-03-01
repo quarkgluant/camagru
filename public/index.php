@@ -47,7 +47,7 @@ if (strlen($_SESSION['loggued_on_user']) > 0)
 <br/>
 <br/>
 <br/>
-<a href="../app/src/main_camagru.php"><h2><p>	Vous étes connecté(e) !<br/><br/></P></h2></a>
+<a href="../app/src/main_camagru.php"><h5><p>	Vous étes connecté(e) !<br/><br/></P></h5></a>
 
 <?php
 }

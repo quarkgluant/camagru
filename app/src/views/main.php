@@ -1,5 +1,5 @@
 <td class="main">
-    <form>
+    <form method="post" action="../src/imagecopy.php">
         <table style="border:solid 1px black; border-radius:5px; text-align:left; box-shadow:0 0 10px;">
             <tr>
                 <td>
@@ -44,6 +44,6 @@
                 </td>
             </tr>
         </table>
-        <input type="reset">
+        <input type="reset"> <input id="fusion" type="submit" value="Fusionner image et décor" disabled>
     </form>
 </td>

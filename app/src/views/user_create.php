@@ -28,7 +28,7 @@
 
 <br/>
 <br/>
-<a href="../../public/index.php"> Se connecter / Revenir à l'accueil !!!! </a>
+<a href="../../public/index.php"> Revenir à l'accueil !!!! </a>
 <br/>
 <br/>
 <br/>

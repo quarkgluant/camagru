@@ -1,9 +1,15 @@
 <?php
-
 session_start();
+// require 'Controleur/Controleur.php';
+require '../controleur/controleur.php';
 
 ?>
+
 <HTML>
+  <?php
+  if (strlen($_SESSION['loggued_on_user']) > 0)
+  {
+  ?>
     <HEAD>
         <title id="title-doc">Camagru</title>
         <meta content="camagru; sangare,cadiot,42,école 42,php,HTML5,webcam,cybercaméra,caméra,getUserMedia,device,multimédia,vidéo,MediaStream" name="keywords">
@@ -74,4 +80,7 @@ session_start();
 
             </script>
         </body>
+        <?php
+        }
+        ?>
 </html>

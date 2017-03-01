@@ -7,6 +7,7 @@ function decor() {
   if (r == true)
   {
     document.getElementById("save").disabled = false;
+    document.getElementById("fusion").disabled = false;
     img.src = valeur_cherchee;
   }
 }
