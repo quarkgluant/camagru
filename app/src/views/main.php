@@ -31,7 +31,7 @@
             <tr>
                 <td>
                     <div>
-                        <input id="fileselect" type="file" accept="image/*" capture="camera">
+                        <input id="fileselect" type="file" accept=".png, .jpg, .jpeg" capture="camera">
                         <b><- Ou choisissez une image ! -><b/>
                     </div>
                 </td>

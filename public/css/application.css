@@ -49,13 +49,24 @@ border: 1px solid black;
 .main {
 width:20%;
 }
-input[type=submit]:hover, input[type=reset]:hover {
- background-color:#FCDEDE;
- }
 input[type=submit]:active, input[type=reset]:active {
- background-color:#FCDEDE;
- box-shadow:1px 1px 1px #D83F3D inset;
+	background: #66C1E4;
+	border: none;
+	color: #FFF;
+	box-shadow: 1px 1px 1px #4C6E91;
+	-webkit-box-shadow: 1px 1px 1px #4C6E91;
+	-moz-box-shadow: 1px 1px 1px #4C6E91;
+	text-shadow: 1px 1px 1px #5079A3;
 }
+input[type=submit]:hover, input[type=reset]:hover {
+	 background: #3EB1DD;
+		border: none;
+		color: #FFF;
+		box-shadow: 1px 1px 1px #4C6E91;
+		-webkit-box-shadow: 1px 1px 1px #4C6E91;
+		-moz-box-shadow: 1px 1px 1px #4C6E91;
+		text-shadow: 1px 1px 1px #5079A3;
+ }
 #container {
     margin: 0px auto;
     width: 500px;
