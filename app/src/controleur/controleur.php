@@ -114,8 +114,8 @@ function auth($login, $passwd)
 function password_modify() {
     if (isset($_POST['passnew'], $_POST['passnewverif']))
     {
-        $_POST['password'] = htmlspecialchars(trim($_POST['password']));
-        $_POST['passverif'] = htmlspecialchars(trim($_POST['passverif']));
+        $_POST['passnew'] = htmlspecialchars(trim($_POST['passnew']));
+        $_POST['passnewverif'] = htmlspecialchars(trim($_POST['passnewverif']));
         try {
             // On verifie si le mot de passe et celui de la verification sont identiques
             if($_POST['passnew'] == $_POST['passnewverif'])
@@ -129,7 +129,7 @@ function password_modify() {
                             if ($user['login'] === $_SESSION['loggued_on_user'])
                             {
                               $passwd_hash = hash('whirlpool', $_POST['passnew']);
-                              $users = array('login' => $_SESSION['loggued_on_user'], 'email' => $user['email'], 'passwd' => $passwd_hash);
+                              $users = array('login' => $_SESSION['loggued_on_user'], 'email' => $user['email'], 'password' => $passwd_hash);
                               saveUser($user);
                               //Si ca a fonctionne, on naffiche pas le formulaire
                               $message = "Votre mot de passe vient d'être correctement modifié.";
