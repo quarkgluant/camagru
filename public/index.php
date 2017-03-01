@@ -40,6 +40,8 @@ if (strlen($_SESSION['loggued_on_user']) > 0)
 
 <br/>
 <a href="../app/src/user_modif.html">Modifier mon mot de passe</a>
+<br/>
+<a href="../email_modify.php">Modifier son adresse mail </a>
 		<br />
 <a href="../app/src/user_delete.php">Supprimer mon compte</a>
 		<br/>
@@ -47,7 +49,7 @@ if (strlen($_SESSION['loggued_on_user']) > 0)
 <br/>
 <br/>
 <br/>
-<a href="../app/src/main_camagru.php"><h5><p>	Vous étes connecté(e) !<br/><br/></P></h5></a>
+<a href="../app/src/views/main_camagru.php">	Accéder au traitemnt d'image !<br/><br/></a>
 
 <?php
 }

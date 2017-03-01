@@ -34,9 +34,7 @@ function identificationUser() {
                                 // var_dump($user);
                                 saveUser($user);
                                 $_SESSION['passwd_hash'] = $passwd_hash;
-                                $message = 'Vous avez bien été inscrit. Vous pouvez dorénavant vous connecter.';
-                                header("Location: ../app/src/views/main_camagru.php");
-                                exit;
+                                $message = '1';
                             }
                             else
                             {
@@ -58,9 +56,7 @@ function identificationUser() {
                                         // var_dump($user);
                                         $_SESSION['passwd_hash'] = $passwd_hash;
                                         saveUser($user);
-                                        $message = 'Vous avez bien été inscrit. Vous pouvez dorénavant vous connecter.';
-                                        header("Location: ../app/src/views/main_camagru.php");
-                                        exit;
+                                        $message = '1';
                                     }
                                 }
                             }

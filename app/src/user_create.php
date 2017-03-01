@@ -6,6 +6,11 @@ include_once __DIR__ . "/views/user_create.php";
 
 $message = identificationUser();
 
-include_once __DIR__ . "/views/messages.php";
+if ($message == '1') {
+header("Location: ../app/src/views/main_camagru.php");
+exit;
+}
+else
+  include_once __DIR__ . "/views/messages.php";
 
 ?>
