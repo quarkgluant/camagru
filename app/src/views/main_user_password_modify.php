@@ -44,6 +44,7 @@ session_start();
 
             <?php
             include __DIR__ . '/footer.php';
+            include __DIR__ . "/messages.php";
             ?>
         </body>
         <?php

@@ -13,5 +13,3 @@ if ($message == '1') {
 }
 else
   include_once __DIR__ . "/views/messages.php";
-
-?>
