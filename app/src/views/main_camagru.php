@@ -48,10 +48,15 @@ session_start();
                         </table>
 
                     </td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
                     <?php
                     include __DIR__ . '/side.php';
                     ?>
+                                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <?php
+                    include __DIR__ . '/side2.php';
+                      ?>
                 </tr>
             </table>
 

@@ -1,10 +1,6 @@
 <td class="side" syle="margin-top:10px; margin-right:10px;">
-    Modifiez vos images !
-    <ul>
-      <li><a href="#">Vos images sauvegardées !</a></li>
-    </br></br>
-      <li><b><i>Choisissez votre décor !</i></b></li>
-    </ul>
+    Choisissez votre décor !
+</br></br>
     <?php
     $nb_fichier = 0;
     echo '<form method="post" action="javascript:decor()"><select id="decor">';
@@ -31,7 +27,7 @@
     ?>
   </br>  </br>
      <div>
-    <img id="imgtag3" src="" width="75" height="75"/>
+    <img id="imgtag3" src="" width="75" height="75" style="border: 1px solid red;"/>
     </div>
 
 </td>

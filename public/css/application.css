@@ -63,9 +63,9 @@ width:20%;
 }
 #canvas {
     margin: 0px auto;
-    width: 500px;
-    height: 375px;
-    background-color: #CCC;
+    width: 0px;
+    height: 0px;
+    background-color: transparent;;
 }
 #container2 {
     margin: 0px auto;
@@ -77,9 +77,6 @@ width:20%;
     margin: 0px auto;
     width: 500px;
     height: 375px;
-    border: 10px red solid;
-}
-#imgtag3 {
     border: 10px red solid;
 }
 .copyright {

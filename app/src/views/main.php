@@ -4,7 +4,7 @@
             <tr>
                 <td>
                     <div>
-                        <input type="button" value="Click photo !" id="save"/>
+                        <input type="button" value="Click photo !" id="save" disabled/>
                         <b><- Prenez une photo ! -><b/>
                     </div>
 
