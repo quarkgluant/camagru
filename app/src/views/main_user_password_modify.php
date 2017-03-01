@@ -42,10 +42,6 @@ include_once __DIR__ . "/../controleur/controleur.php";
 
           </tr>
             </table>
-
-            <br/>
-
-
             <?php
             include_once __DIR__ . "/messages.php";
             include __DIR__ . '/footer.php';

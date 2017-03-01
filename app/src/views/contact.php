@@ -13,17 +13,17 @@
 <table>
     <tr>
         <td>
-            <form method="post" action="../src/send_mail.php" autocomplete="on">
+            <form method="post" action="../send_mail.php" autocomplete="on">
                 Votre adresse mail :
         </td>
-        <td><input type="email" name="mail" size="80" maxlength="100" autofocus/></br></br>
+        <td><input type="email" name="mail" size="80" maxlength="100" <?= "value="."'".$email ."'" ?> autofocus/></br></br>
         </td>
     </tr>
     <tr>
         <td>
             Objet du message :
         </td>
-        <td><input list="listObj" name="obj" size="110" maxlength="150">
+        <td><input list="listObj" name="obj" size="110" maxlength="150" placeholder="Objet de votre message.">
             <datalist id="listObj">
                 <option value="Problèmes techniques">
                 <option value="Besoin d'informations complémentaires">
@@ -37,7 +37,7 @@
         <td>
             Votre message :
         </td>
-        <td><TEXTAREA name="msg" rows=10 cols=120 wrap="physical"/>Votre message.</TEXTAREA>
+        <td><TEXTAREA name="msg" rows=10 cols=120 wrap="physical" placeholder="Votre message."/></TEXTAREA>
         </td>
     </tr>
     <tr>

@@ -43,11 +43,11 @@ if (strlen($_SESSION['loggued_on_user']) > 0)
 ?>
 
 <br/>
-<a href="../app/src/user_modif.html">Modifier mon mot de passe</a>
+<a href="../app/src/views/main_user_password_modify.php">Modifier mon mot de passe</a>
 <br/>
-<a href="../email_modify.php">Modifier son adresse mail </a>
+<a href="../app/src/views/main_user_email_modify.php">Modifier son adresse mail </a>
 		<br />
-<a href="../app/src/user_delete.php">Supprimer mon compte</a>
+<a href="../app/src/views/user_delete.php">Supprimer mon compte</a>
 		<br/>
 <a href="../app/src/logout.php">Se déconnecter</a>
 <br/>

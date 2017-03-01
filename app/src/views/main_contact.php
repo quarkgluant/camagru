@@ -2,6 +2,7 @@
 session_start();
 include_once __DIR__ . "/../modeles/membres.php";
 include_once __DIR__ . "/../controleur/controleur.php";
+
 ?>
 
 <HTML>
@@ -10,9 +11,9 @@ include_once __DIR__ . "/../controleur/controleur.php";
   {
   ?>
     <HEAD>
-        <title id="title-doc">Camagru</title>
+        <title id="title-doc">Camagru : changement de mot de passe !</title>
         <meta content="camagru; sangare,cadiot,42,école 42,php,HTML5,webcam,cybercaméra,caméra,getUserMedia,device,multimédia,vidéo,MediaStream" name="keywords">
-        <Meta charset = "UTF-8">
+        <Meta  charset = "UTF-8">
         <meta name="viewport" content="initial-scale=1.0,width=device-width" />
         <?php
         if (basename(__DIR__) === "src"){
@@ -23,14 +24,6 @@ include_once __DIR__ . "/../controleur/controleur.php";
         }
         ?>
         <link rel="stylesheet" <?= "href="."'".$href."'" ?> />
-        <script>
-
-        <?php
-        include __DIR__ . '/../../../public/js/confirm_del.js';
-        include __DIR__ . '/../../../public/js/decor.js';
-        ?>
-
-        </script>
         </HEAD>
         <body>
 
@@ -41,44 +34,17 @@ include_once __DIR__ . "/../controleur/controleur.php";
             <br/>
             <table>
                 <tr>
-                    <td>
+                <?php
+                  $email = getmail($_SESSION['loggued_on_user']);
+                  include __DIR__ . '/contact.php';
+                ?>
 
-                        <table  name = "table1">
-                            <tr>
-                                <?php
-                                include __DIR__ . '/main.php';
-                                ?>
-
-                            </tr>
-                        </table>
-
-                    </td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-
-                    <?php
-                    include __DIR__ . '/side.php';
-                    ?>
-                                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <?php
-                    include __DIR__ . '/side2.php';
-                      ?>
-                </tr>
+          </tr>
             </table>
-
-            <br/>
-
-
             <?php
             include_once __DIR__ . "/messages.php";
             include __DIR__ . '/footer.php';
             ?>
-
-            <script>
-            <?php
-            include __DIR__ . '/../../../public/js/camera.js';
-            ?>
-
-            </script>
         </body>
         <?php
         }
