@@ -54,7 +54,7 @@ function maj_user(array $user)
 
     $bdd = getBdd();
 
-    $requete = $pdo->prepare("UPDATE T_USERS SET
+    $requete = $bdd->prepare("UPDATE T_USERS SET
         password = :password,
         email = :email
 		WHERE
