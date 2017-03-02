@@ -55,10 +55,10 @@ function maj_user(array $user)
     $bdd = getBdd();
 
     $requete = $bdd->prepare("UPDATE T_USERS SET
-        password = :password,
-        email = :email
+        USER_PASSWORD = :password,
+        USER_EMAIL = :email
 		WHERE
-        login = :login");
+        USER_LOGIN = :login");
 
     $requete->bindParam(':login', $user['login']);
     $requete->bindParam(':password', $user['password']);
