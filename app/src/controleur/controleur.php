@@ -143,7 +143,7 @@ function password_modify() {
                             if ($user['login'] === $_SESSION['loggued_on_user'])
                             {
                               $passwd_hash = hash('whirlpool', $_POST['passnew']);
-                              $users = array(
+                              $user = array(
                                   'login' => $_SESSION['loggued_on_user'],
                                   'email' => $user['email'],
                                   'password' => $passwd_hash);
