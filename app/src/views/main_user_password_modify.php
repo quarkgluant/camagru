@@ -7,7 +7,15 @@ include_once __DIR__ . "/../controleur/controleur.php";
 
 <HTML>
   <?php
-  if (strlen($_SESSION['loggued_on_user']) > 0)
+  if (strlen($_SESSION['loggued_on_user']) <= 0 || auth($_SESSION['loggued_on_user'], $_SESSION['passwd_hash']) == TRUE)
+  {
+    ?>
+
+  <head></head><body><B></br></br></br></br></br></br><center><div>Erreur de connexion : petit malin !!!!!</div></center><br/><br/></B></body>
+
+  <?php
+  }
+  else
   {
   ?>
     <HEAD>

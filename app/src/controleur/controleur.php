@@ -90,7 +90,6 @@ function auth($login, $passwd)
 {
 	$users = getUsers();
 
-    // var_dump($users);
 	foreach($users as $entry)
 	{
 		if ($entry['login'] == $login)

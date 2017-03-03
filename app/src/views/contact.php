@@ -1,15 +1,4 @@
-<?php
-//include("./auth.php");
-//if (strlen($_SESSION['loggued_on_user']) > 0)
-//{
-?>
-
 </br> Contacts : </br><br/><br/>
-
-
-<?php
-//}
-?>
 <table>
     <tr>
         <td>

@@ -38,7 +38,7 @@ require __DIR__ .'/../app/src/controleur/controleur.php';
 	<br/>
 
 <?php
-if (strlen($_SESSION['loggued_on_user']) > 0)
+if (strlen($_SESSION['loggued_on_user']) > 0 && auth($_SESSION['loggued_on_user'], $_SESSION['passwd_hash']) == FALSE)
 {
 ?>
 
