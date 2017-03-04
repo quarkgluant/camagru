@@ -40,7 +40,7 @@ function identificationUser() {
                             {
                                 foreach($users as $user)
                                 {
-                                    if ($user['login'] === $_POST['login'] || $user['email'] === $_POST['email'])
+                                    if ($user['login'] === $_POST['login'])
                                     {
                                         //Sinon, on dit que le pseudo voulu est deja pris
                                         $message = 'Un autre utilisateur utilise déjà le nom d\'utilisateur que vous désirez utiliser.';
