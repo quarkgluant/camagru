@@ -6,7 +6,7 @@ include_once __DIR__ . "/../controleur/controleur.php";
 
 <HTML>
   <?php
-  if (strlen($_SESSION['loggued_on_user']) <= 0 || auth($_SESSION['loggued_on_user'], $_SESSION['passwd_hash']) == TRUE)
+  if (empty($_SESSION['loggued_on_user']) || empty($_SESSION['passwd_hash']))
   {
     ?>
 
