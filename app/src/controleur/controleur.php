@@ -13,10 +13,10 @@ function identificationUser() {
 
         try {
                 // On verifie si le mot de passe et celui de la verification sont identiques
-                if($_POST['password'] == $_POST['passverif'])
+                if ($_POST['password'] == $_POST['passverif'])
                 {
                     //On verifie si le mot de passe a 8 caracteres ou plus
-                    if(strlen($_POST['password']) >= 8)
+                    if (strlen($_POST['password']) >= 8)
                     {
                         //On verifie si l'email est valide
                         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
@@ -34,6 +34,7 @@ function identificationUser() {
                                 // var_dump($user);
                                 saveUser($user);
                                 $_SESSION['passwd_hash'] = $passwd_hash;
+                                $_SESSION['loggued_on_user'] = $_POST['login'];
                                 $message = '1';
                             }
                             else
@@ -55,6 +56,7 @@ function identificationUser() {
                                         );
                                         // var_dump($user);
                                         $_SESSION['passwd_hash'] = $passwd_hash;
+                                        $_SESSION['loggued_on_user'] = $_POST['login'];
                                         saveUser($user);
                                         $message = '1';
                                     }
@@ -97,6 +99,7 @@ function auth($login, $passwd)
 			$passwd_hash = hash('whirlpool', $passwd);
 			if ($passwd_hash == $entry['password'])
 			{
+                $_SESSION['passwd_hash'] = $passwd_hash;
 				if (isset($entry['admin']))
 					return (2);
 				else
@@ -131,10 +134,10 @@ function password_modify() {
         $_POST['passnewverif'] = htmlspecialchars(trim($_POST['passnewverif']));
         try {
             // On verifie si le mot de passe et celui de la verification sont identiques
-            if($_POST['passnew'] == $_POST['passnewverif'])
+            if ($_POST['passnew'] == $_POST['passnewverif'])
             {
                 //On verifie si le mot de passe a 8 caracteres ou plus
-                if(strlen($_POST['passnew']) >= 8)
+                if (strlen($_POST['passnew']) >= 8)
                 {
                         $users = getUsers();
                         foreach($users as $user)
