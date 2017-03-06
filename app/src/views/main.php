@@ -1,11 +1,15 @@
 <td class="main">
-    <form method="post" action="../src/imagecopy.php">
+    <form method="post" action="javascript:fusion()">
         <table style="border:solid 1px black; border-radius:5px; text-align:left; box-shadow:0 0 10px;">
             <tr>
                 <td>
                     <div>
                         <input type="button" value="Click photo !" id="save" disabled/>
                         <b><- Prenez une photo ! -><b/>
+                    </div>
+                  </br>  </br>
+                     <div>
+                    <img id="imgtag4" src="" width="75" height="75" style="border: 1px solid red;"/>
                     </div>
 
                 </td>
