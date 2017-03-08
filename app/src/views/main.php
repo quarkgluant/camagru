@@ -7,23 +7,8 @@
                         <input type="button" value="Click photo !" id="save" disabled/>
                         <b><- Prenez une photo ! -><b/>
                     </div>
-                  </br>  </br>
-                     <div>
-                    <img id="imgtag4" src="" width="75" height="75" style="border: 1px solid red;"/>
-                    </div>
+                </td>
 
-                </td>
-                <td>
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        </br>
-                        <canvas id="canvas" width="500" height="375"></canvas>
-                    </div>
-                </td>
                 <td>
                     <div id="container">
                         <video autoplay id="videoElement">
@@ -49,5 +34,8 @@
             </tr>
         </table>
         <input type="reset"> <input id="fusion" type="submit" value="Fusionner image et décor" disabled>
+            <div>
+                <canvas id="canvas" width="500" height="375"></canvas>
+            </div>
     </form>
 </td>
