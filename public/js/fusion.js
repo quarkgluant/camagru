@@ -8,7 +8,7 @@ function fusion() {
             window.location.pathname = 'base/app/src/views/main_camagru.php';
         }
     };
-    var params = 'image='+canvas.src+'&image_incrustee='+decorPng.src;
+    var params = 'image='+imgtag.src+'&image_incrustee='+decorPng.src;
     console.log(params);
     xhr.send(params);
 }
