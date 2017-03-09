@@ -122,7 +122,21 @@ function getmail($login)
 	{
 		if ($entry['login'] == $login)
 		{
-				return ($entry['email']);
+			return ($entry['email']);
+		}
+	}
+}
+
+function getPassword($login)
+{
+	$users = getUsers();
+
+    // var_dump($users);
+	foreach($users as $entry)
+	{
+		if ($entry['login'] == $login)
+		{
+			return ($entry['password']);
 		}
 	}
 }

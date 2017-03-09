@@ -59,7 +59,7 @@ else
  <li><a href="../app/src/user_create.php">Créer votre compte utilisateur !!!!</a></li>
  </ul>
  <br/>
- <br/>
+ <a href="../app/src/password_forgotten.php">Mot de passe oublié ?</a><br/>
  <?php
  }
  ?>

@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$parts = explode(',', $image);
 		$data = $parts[1];
 		// remplacer les blancs par des + quand les donnees viennent de Javascript canvas.toDataURL()
-		$data = str_replace(' ','+',$data);
+		$data = str_replace(' ', '+', $data);
 		$data = base64_decode($data);
 		file_put_contents($filename, $data); // ecriture de l'image de fond
 		$dessous = imagecreatefrompng($filename); //on ouvre l'image de fond
