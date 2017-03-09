@@ -27,7 +27,7 @@
     ?>
   </br>  </br>
      <div>
-    <img id="imgtag3" src="" width="75" height="75" style="border: 1px solid red;"/>
+    <img id="decorPng" src="" width="75" height="75" style="border: 1px solid red;"/>
     </div>
 
 </td>
