@@ -3,7 +3,6 @@ session_start();
 include_once __DIR__ . "/modeles/membres.php";
 include_once __DIR__ . "/controleur/controleur.php";
 include_once __DIR__ . "/views/password_forgotten.php";
-
 // $destinataire = 'pcadiot@gmail.com';
 // Pour les champs $expediteur / $copie / $destinataire, séparer par une virgule s'il y a plusieurs adresses
 $expediteur = 'pathibul.r@gmail.com';
