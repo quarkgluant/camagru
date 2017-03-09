@@ -3,10 +3,12 @@ session_start();
 include_once __DIR__ . "/modeles/membres.php";
 include_once __DIR__ . "/controleur/controleur.php";
 include_once __DIR__ . "/views/password_forgotten.php";
+
 // $destinataire = 'pcadiot@gmail.com';
 // Pour les champs $expediteur / $copie / $destinataire, séparer par une virgule s'il y a plusieurs adresses
 $expediteur = 'pathibul.r@gmail.com';
 //$copie_cachee = 'pcadiot@student.42.fr';
+
 $objet = "reinitialiser le mot de passe"; // Objet du message
 $headers = 'MIME-Version: 1.0' . "\n"; // Version MIME
 $headers .= 'Content-type: text/html; charset=ISO-8859-1' . "\n"; // l'en-tete Content-type pour le format HTML
