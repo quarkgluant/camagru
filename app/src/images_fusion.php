@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$image = $_POST['image'];
 	$image_incrustee = $_POST['image_incrustee'];
 	$login = $_SESSION['loggued_on_user'];
-  var_dump($image, $image_incrustee, $login);
+
 	if (empty($image) || empty ($image_incrustee))
 	{
 		echo "ERREUR : les champs image et décor doivent être remplis !";
