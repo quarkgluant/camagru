@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	else
 	{
 		$timestamp = mktime();
-		$dir = '../../public/img/save/'];
+		$dir = '../../public/img/save/';
 		$file = $timestamp.'.png';
 		$filename = $dir.$file;
 		$parts = explode(',', $image);
