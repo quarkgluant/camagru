@@ -49,12 +49,13 @@ if (strlen($_SESSION['loggued_on_user']) > 0 && auth($_SESSION['loggued_on_user'
 <li><a href="../app/src/views/user_delete.php">Supprimer mon compte</a></li>
 <li><a href="../app/src/logout.php">Se déconnecter</a></li>
 <li><a href="../app/src/views/main_camagru.php">	Accéder au traitement d'image !</a></li>
-
+</ul>
 <?php
 }
 else
 {
  ?>
+ <ul id="menu">
  <li><a href="../app/src/password_forgotten.php">Mot de passe oublié ?</a></li>
  <li><a href="../app/src/user_create.php">Créer votre compte utilisateur !!!!</a></li>
 </ul>
