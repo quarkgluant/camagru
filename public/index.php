@@ -55,11 +55,11 @@ if (strlen($_SESSION['loggued_on_user']) > 0 && auth($_SESSION['loggued_on_user'
 else
 {
  ?>
-
+ <li><a href="../app/src/password_forgotten.php">Mot de passe oublié ?</a></li>
  <li><a href="../app/src/user_create.php">Créer votre compte utilisateur !!!!</a></li>
- </ul>
+</ul>
  <br/>
- <a href="../app/src/password_forgotten.php">Mot de passe oublié ?</a><br/>
+ <br/>
  <?php
  }
  ?>
