@@ -28,7 +28,9 @@
 
 <br/>
 <br/>
-<a href="../../public/index.php"> Revenir à l'accueil !!!! </a>
+<ul id="menu">
+<li><a href="../../public/index.php"> Revenir à l'accueil !!!! </a></li>
+</ul>
 <br/>
 <br/>
 <br/>

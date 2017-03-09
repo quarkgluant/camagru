@@ -46,7 +46,6 @@ include_once __DIR__ . "/../controleur/controleur.php";
                     <?php
                     include __DIR__ . '/user_password_modify.php';
                     $message = password_modify();
-                    // echo $modification;
                     ?>
 
                 </tr>
