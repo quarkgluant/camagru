@@ -10,6 +10,6 @@ function decor() {
     document.getElementById("save").disabled = false;
     document.getElementById("fusion").disabled = false;
     img.src = valeur_cherchee;
-    img2.src = valeur_cherchee;
+    // img2.src = valeur_cherchee;
   //}
 }
