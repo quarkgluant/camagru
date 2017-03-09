@@ -10,5 +10,5 @@ function fusion() {
     };
     var params = 'image='+canvas.src+'&image_incrustee='+decorPng.src;
     console.log(params);
-    xhr.send(params)
+    xhr.send(params);
 }
