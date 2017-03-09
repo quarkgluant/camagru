@@ -41,6 +41,7 @@
 </table>
 <br/>    <br/>
 <br/>
-<a href="views/main_camagru.php"> Revenir à la page précédente !!!! </a>
-<br/>
-<br/><br/>
+<ul id="menu">
+    <li>
+<a href="../views/main_camagru.php"> Revenir à la page précédente !!!! </a></li>
+</ul>

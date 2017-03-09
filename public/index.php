@@ -43,17 +43,12 @@ if (strlen($_SESSION['loggued_on_user']) > 0 && auth($_SESSION['loggued_on_user'
 ?>
 
 <br/>
-<a href="../app/src/views/main_user_password_modify.php">Modifier mon mot de passe</a>
-<br/>
-<a href="../app/src/views/main_user_email_modify.php">Modifier son adresse mail </a>
-		<br />
-<a href="../app/src/views/user_delete.php">Supprimer mon compte</a>
-		<br/>
-<a href="../app/src/logout.php">Se déconnecter</a>
-<br/>
-<br/>
-<br/>
-<a href="../app/src/views/main_camagru.php">	Accéder au traitemnt d'image !<br/><br/></a>
+<ul id="menu">
+		<li><a href="../app/src/views/main_user_password_modify.php">Modifier mon mot de passe</a></li>
+<li><a href="../app/src/views/main_user_email_modify.php">Modifier son adresse mail </a></li>
+<li><a href="../app/src/views/user_delete.php">Supprimer mon compte</a></li>
+<li><a href="../app/src/logout.php">Se déconnecter</a></li>
+<li><a href="../app/src/views/main_camagru.php">	Accéder au traitement d'image !</a></li>
 
 <?php
 }
@@ -61,7 +56,8 @@ else
 {
  ?>
 
- <a href="../app/src/user_create.php">Créer votre compte utilisateur !!!!</a>
+ <li><a href="../app/src/user_create.php">Créer votre compte utilisateur !!!!</a></li>
+ </ul>
  <br/>
  <br/>
  <?php

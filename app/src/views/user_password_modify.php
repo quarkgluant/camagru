@@ -28,6 +28,6 @@
     <br/>
     <br/>
     <br/>
-    <i><a href="./main_camagru.php"> Revenir à la page précédente !!!! </a></i>
-    <br/>
-    <br/>
+    <ul id="menu">
+        <li><a href="./main_camagru.php"> Revenir à la page précédente !!!! </a></li>
+    </ul>
