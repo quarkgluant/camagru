@@ -29,13 +29,12 @@ function saveImage(array $img)
     $bdd = getBdd();
     $statement = $bdd->prepare(
         'insert into T_IMAGES
-        (IMG_PATH, USER_ID, REV_ID)
+        (IMG_PATH, USER_ID)
         values
         (:path, :password, :email)'
     );
     $statement->bindParam(':path', $img['path']);
     $statement->bindParam(':user_id', $user['user_id']);
-    $statement->bindParam(':rev_id', $user['rev_id']);
 
     $statement->execute();
 }
