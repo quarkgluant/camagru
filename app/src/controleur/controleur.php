@@ -252,3 +252,12 @@ function email_modify() {
         return $message;
     }
 }
+
+function sauvergarde_image(array $img){
+    try {
+        saveImage($img);
+    }catch (Exception $e) {
+        $message = $e->getMessage();
+    }
+
+}
