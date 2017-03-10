@@ -25,14 +25,14 @@ function saveImage(array $img)
     $statement->execute();
 }
 
-function countAll()
+function countAllImages()
 {
     $bdd = getBdd();
     $count = $bdd->query('select count(*) from T_IMAGES')->fetchColumn();
     return $count;
 }
 
-function maj_img(array $img) {
+function majImg(array $img) {
 
     $bdd = getBdd();
 
