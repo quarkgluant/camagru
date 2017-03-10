@@ -4,7 +4,7 @@ session_start();
 
 include_once __DIR__. "/controleur/controleur.php";
 
-$ret = auth($_POST['login'], $_POST['password']);
+$ret = auth_user($_POST['login'], $_POST['password']);
 
 if ($ret == 1)
 {

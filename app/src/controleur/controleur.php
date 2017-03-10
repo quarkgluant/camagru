@@ -1,8 +1,9 @@
 <?php
 require_once __DIR__ . '/../modeles/membres.php';
+require_once __DIR__ . '/../modeles/images.php';
 
 // vérifie identification utilisateur
-function identificationUser() {
+function identification_user() {
 
     if (isset($_POST['login'], $_POST['password'], $_POST['passverif'], $_POST['email']))
     {
@@ -88,57 +89,73 @@ function identificationUser() {
     }
 }
 
-function auth($login, $passwd)
+function auth_user($login, $passwd)
 {
-	$users = getUsers();
+	try {
 
-	foreach($users as $entry)
-	{
-		if ($entry['login'] == $login)
-		{
-			$passwd_hash = hash('whirlpool', $passwd);
-			if ($passwd_hash == $entry['password'])
-			{
-                $_SESSION['passwd_hash'] = $passwd_hash;
-				if (isset($entry['admin']))
-					return (2);
-				else
-					return (1);
-			}
-			else
-				return (0);
-		}
-	}
-	return (0);
+        $users = getUsers();
+
+    	foreach($users as $entry)
+    	{
+    		if ($entry['login'] == $login)
+    		{
+    			$passwd_hash = hash('whirlpool', $passwd);
+    			if ($passwd_hash == $entry['password'])
+    			{
+                    $_SESSION['passwd_hash'] = $passwd_hash;
+    				if (isset($entry['admin']))
+    					return (2);
+    				else
+    					return (1);
+    			}
+    			else
+    				return (0);
+    		}
+    	}
+    	return (0);
+    } catch (Exception $e) {
+        $message = $e->getMessage();
+        echo "<div>$message</div>";
+    }
 }
 
 
-function getmail($login)
+function get_mail($login)
 {
-	$users = getUsers();
+    try {
+        $users = getUsers();
 
-    // var_dump($users);
-	foreach($users as $entry)
-	{
-		if ($entry['login'] == $login)
-		{
-			return ($entry['email']);
-		}
-	}
+        // var_dump($users);
+    	foreach($users as $entry)
+    	{
+    		if ($entry['login'] == $login)
+    		{
+    			return ($entry['email']);
+    		}
+    	}
+    } catch (Exception $e) {
+        $message = $e->getMessage();
+        echo "<div>$message</div>";
+    }
 }
 
-function getPassword($login)
+function get_password($login)
 {
-	$users = getUsers();
+    try {
+    	$users = getUsers();
 
-    // var_dump($users);
-	foreach($users as $entry)
-	{
-		if ($entry['login'] == $login)
-		{
-			return ($entry['password']);
-		}
-	}
+        // var_dump($users);
+    	foreach($users as $entry)
+    	{
+    		if ($entry['login'] == $login)
+    		{
+    			return ($entry['password']);
+    		}
+    	}
+    } catch (Exception $e) {
+        $message = $e->getMessage();
+        echo "<div>$message</div>";
+    }
 }
 
 function password_modify() {
@@ -153,7 +170,9 @@ function password_modify() {
                 //On verifie si le mot de passe a 8 caracteres ou plus
                 if (strlen($_POST['passnew']) >= 8)
                 {
+
                         $users = getUsers();
+
                         foreach($users as $user)
                         {
                             if ($user['login'] === $_SESSION['loggued_on_user'])

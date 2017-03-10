@@ -7,7 +7,7 @@ include_once __DIR__ . "/../controleur/controleur.php";
 
 <HTML>
   <?php
-  if (strlen($_SESSION['loggued_on_user']) <= 0 || auth($_SESSION['loggued_on_user'], $_SESSION['passwd_hash']) == TRUE)
+  if (strlen($_SESSION['loggued_on_user']) <= 0 || auth_user($_SESSION['loggued_on_user'], $_SESSION['passwd_hash']) == TRUE)
   {
     ?>
 
@@ -43,7 +43,7 @@ include_once __DIR__ . "/../controleur/controleur.php";
             <table>
                 <tr>
                 <?php
-                  $email = getmail($_SESSION['loggued_on_user']);
+                  $email = get_mail($_SESSION['loggued_on_user']);
                   include __DIR__ . '/contact.php';
                 ?>
 

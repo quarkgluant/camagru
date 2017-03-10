@@ -20,7 +20,7 @@ $headers .= 'Delivered-to: ' . $destinataire . "\n"; // Destinataire
 $message =  "<a href='http://localhost:8080/base/app/src/views/main_user_password_modify.php'>cliquez ici</a>";
 if (isset($_POST['login'], $_POST['email'])) {
     $_SESSION['loggued_on_user'] = $_POST['login'];
-    $_SESSION['passwd_hash'] = getPassword($_POST);
+    $_SESSION['passwd_hash'] = get_password($_POST);
     $destinataire = $_POST['email'];
     $copie = 'pathibul.r@gmail.com';
     if (mail($destinataire, $objet, $message, $headers)){
