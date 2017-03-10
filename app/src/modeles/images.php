@@ -19,7 +19,7 @@ function getBdd() {
 function getImages() {
     $bdd = getBdd();
     $users = $bdd->query('select IMG_PATH as path,'
-            . ' USER_ID as user_id, REV_ID as rev_id'
+            . ' USER_LOGIN as login'
             . ' from T_IMAGES')->fetchAll(PDO::FETCH_ASSOC);
     return $users;
 }
@@ -29,12 +29,12 @@ function saveImage(array $img)
     $bdd = getBdd();
     $statement = $bdd->prepare(
         'insert into T_IMAGES
-        (IMG_PATH, USER_ID)
+        (IMG_PATH, USER_LOGIN)
         values
-        (:path, :password, :email)'
+        (:path, :user_login)'
     );
     $statement->bindParam(':path', $img['path']);
-    $statement->bindParam(':user_id', $user['user_id']);
+    $statement->bindParam(':user_login', $img['login']);
 
     $statement->execute();
 }
@@ -51,14 +51,12 @@ function maj_img(array $img) {
     $bdd = getBdd();
 
 	$requete = $pdo->prepare("UPDATE T_IMAGES SET
-        path = :path,
-        rev_id = :rev_id
+        IMG_PATH = :path
 		WHERE
-        login = :login");
+        USER_LOGIN = :login");
 
-	$requete->bindParam(':login', $user['login']);
-	$requete->bindParam(':password', $user['password']);
-    $requete->bindParam(':email', $user['email']);
+	$requete->bindParam(':path', $img['path']);
+	$requete->bindParam(':login', $img['login']);
 
 	return $requete->execute();
 }
