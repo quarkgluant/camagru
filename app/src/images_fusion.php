@@ -47,16 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$dst_h = $height_dessous;
 		$result = imagecopyresampled ($dessous, $dessus, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h );
 		imagepng($dessous, $filename); // on ecrit l'image traitee vers le fichier $filename
+
 		// on sauvegarde en base
-		//$data = array(
-		//			'user_id' => $login,
-		//			'image_name' => $file
-		//);
-		//$image = new Image($data);
-		//$db = new DBAccess($DB_DSN, $DB_USER, $DB_PASSWORD);
-		//if (!$image->persist($db->db))
-		//	echo "ERREUR : probleme d'insertion en base";
-		// header('location:/camagru/view/montage.php');
+		$img = array(
+				  		'path' => $filename,
+							'login' => $login
+		);
+		sauvegarde_image($img);
     header('Location: ./views/main_camagru.php');
 		return;
 	}
