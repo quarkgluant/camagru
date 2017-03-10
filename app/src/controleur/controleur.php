@@ -253,7 +253,7 @@ function email_modify() {
     }
 }
 
-function sauvergarde_image(array $img){
+function sauvegarde_image(array $img){
     try {
         saveImage($img);
     }catch (Exception $e) {

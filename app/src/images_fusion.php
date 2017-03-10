@@ -49,11 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		imagepng($dessous, $filename); // on ecrit l'image traitee vers le fichier $filename
 
 		// on sauvegarde en base
-		$img = array(
+		$picture = array(
 				  		'path' => $filename,
 							'login' => $login
 		);
-		sauvegarde_image($img);
+		sauvegarde_image($picture);
     header('Location: ./views/main_camagru.php');
 		return;
 	}

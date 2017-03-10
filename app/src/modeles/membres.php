@@ -56,7 +56,8 @@ function majUser(array $user)
 
     $requete = $bdd->prepare("UPDATE T_USERS SET
         USER_PASSWORD = :password,
-        USER_EMAIL = :email
+        USER_EMAIL = :email,
+        USER_UPDATE = :login
 		WHERE
         USER_LOGIN = :login");
 
