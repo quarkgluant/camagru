@@ -49,7 +49,7 @@ function countAll()
     return $count;
 }
 
-function maj_user(array $user)
+function majUser(array $user)
 {
 
     $bdd = getBdd();

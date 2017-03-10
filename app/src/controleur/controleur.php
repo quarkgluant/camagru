@@ -182,7 +182,7 @@ function password_modify() {
                                   'login' => $_SESSION['loggued_on_user'],
                                   'email' => $user['email'],
                                   'password' => $passwd_hash);
-                              maj_user($user);
+                              majUser($user);
                               //Si ca a fonctionne, on naffiche pas le formulaire
                               $message = "Votre mot de passe vient d'être correctement modifié.";
 
@@ -229,7 +229,7 @@ function email_modify() {
                             if ($user['login'] === $_SESSION['loggued_on_user'])
                             {
                               $users = array('login' => $_SESSION['loggued_on_user'], 'email' => $user['email'], 'password' => $user['password']);
-                              maj_user($user);
+                              majUser($user);
                               //Si ca a fonctionne, on naffiche pas le formulaire
                               $message = "Votre mail d'être correctement modifié.";
                             }
