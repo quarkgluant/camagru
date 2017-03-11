@@ -36,7 +36,7 @@ function draw(v,c,w,h) {
 }
 
 document.getElementById('save').addEventListener('click',function(e){
-        draw(v,context,w,h);
+        draw(v,context,w,h);    
 });
 
 var fr;
