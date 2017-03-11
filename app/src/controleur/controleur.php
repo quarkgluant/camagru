@@ -119,6 +119,21 @@ function auth_user($login, $passwd)
     }
 }
 
+function delete_user() {
+    if (isset($_SESSION['loggued_on_user']))
+    {
+        $UTILISATEUR = htmlspecialchars(trim($_SESSION['loggued_on_user']));
+
+        try {
+
+            $users = array('login' => $_SESSION['loggued_on_user']);
+            delUser($user);
+          } catch (Exception $e) {
+            $message = $e->getMessage();
+        }
+        return $message;
+    }
+}
 
 function get_mail($login)
 {

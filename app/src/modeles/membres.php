@@ -67,3 +67,15 @@ function majUser(array $user)
 
     return $requete->execute();
 }
+
+function delUser(array $user)
+{
+    $bdd = getBdd();
+    $statement = $bdd->prepare("DELETE FROM T_USERS
+              WHERE
+                USER_LOGIN = :login");
+
+    $statement->bindParam(':login', $user['login']);
+
+    $statement->execute();
+}
