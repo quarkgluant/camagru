@@ -1,4 +1,4 @@
-function decor() {
+function decorJS() {
   var select = document.getElementById("decor");
   var choice = select.selectedIndex  // Récupération de l'index du <option> choisi
   var valeur_cherchee = select.options[choice].value; // Récupération de la valeur du <option> choisi

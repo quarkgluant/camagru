@@ -4,7 +4,7 @@
     <?php
     $nb_fichier = 0;
     //echo '<form method="post" action="javascript:decor()"><select id="decor" onchange='javascript:decor()'>';
-    echo '<form method="post"><select id="decor" onchange="javascript:decor()">';
+    echo '<form method="post"><select id="decor" onchange="javascript:decorJS();">';
     //echo '<ul>';
     $dossier_ref = '../../../public/img/decor/';
     if (($dossier = opendir('../../../public/img/decor')))
@@ -27,6 +27,7 @@
     else
     echo 'Le dossier n\' a pas pu être ouvert';
     ?>
+
   </br>  </br>
      <div>
     <img id="decorPng" src="" width="75" height="75" style="border: 1px solid red;"/>

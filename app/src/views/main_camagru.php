@@ -32,7 +32,7 @@ include_once __DIR__ . "/../controleur/controleur.php";
         }
         ?>
         <link rel="stylesheet" <?= "href="."'".$href."'" ?> />
-        <script>
+        <script type="text/javascript">
 
         <?php
         include __DIR__ . '/../../../public/js/confirm_del.js';
