@@ -19,7 +19,6 @@
                 echo '<option value="./' . $dossier_ref . $fichier . '">'. $fichier  . '</option>';
             } // On ferme le if (qui permet de n'afficher que les .png)
         } // On termine la boucle
-        //echo '</select><input type="submit" value="Afficher le décor choisi" /></form>';
         echo '</select></form>';
         echo '</br></br>Vous avez le choix entre <strong>' . $nb_fichier .'</strong> décors différents';
         closedir($dossier);
