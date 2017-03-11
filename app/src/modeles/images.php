@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/bdd.php';
 
 // Renvoie la liste des images
 function getImages() {

@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/controleur/controleur.php';
+
 if(!isset($_SESSION))
 {
 	session_start();
@@ -51,10 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		// on sauvegarde en base
 		$picture = array(
 				  		'path' => $filename,
-							'login' => $login
+						'login' => $login
 		);
 		sauvegarde_image($picture);
-    header('Location: ./views/main_camagru.php');
+        header('Location: ./views/main_camagru.php');
 		return;
 	}
 }

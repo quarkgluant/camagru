@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../modeles/bdd.php';
 require_once __DIR__ . '/../modeles/membres.php';
 require_once __DIR__ . '/../modeles/images.php';
 

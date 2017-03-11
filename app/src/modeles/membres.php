@@ -1,21 +1,8 @@
 <?php
+require_once __DIR__ . '/bdd.php';
 
 // Effectue la connexion à la BDD
 // Instancie et renvoie l'objet PDO associé
-function getBdd()
-{
-    $dsn = "mysql:host=localhost;dbname=camagru;charset=utf8";
-    $db_user = 'root';
-    $db_pass = 'root';
-    $bdd = new PDO($dsn,
-        $db_user,
-        $db_pass,
-        array(
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        ));
-    return $bdd;
-}
-
 // Renvoie la liste des utilisateurs
 function getUsers()
 {
