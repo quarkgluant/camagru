@@ -29,5 +29,19 @@
     <br/>
     <br/>
     <ul id="menu">
+
+      <?php
+      if ($_SESSION['tag'] != 'GOOD'){
+          ?>
         <li><a href="./main_camagru.php"> Revenir à la page précédente !!!! </a></li>
+        <?php
+        }
+        else
+        {
+            ?>
+      <li><a href="./../logout.php"> Revenir à la page d'accueil !!!! </a></li>
+      <?php
+      }
+      ?>
+
     </ul>

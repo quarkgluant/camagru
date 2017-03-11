@@ -27,7 +27,7 @@
 <br/>
 <br/>
 <ul id="menu">
-<li><a href="../../public/index.php"> Revenir à l'accueil !!!! </a></li>
+<li><a href="./logout.php"> Revenir à l'accueil !!!! </a></li>
 </ul>
 <br/>
 <br/>

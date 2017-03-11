@@ -17,10 +17,11 @@ $headers .= 'From: "Camagru contact"<' . $expediteur . '>' . "\n"; // Expediteur
 $headers .= 'Delivered-to: ' . $destinataire . "\n"; // Destinataire
 // $headers .= 'Cc: ' . $copie . "\n"; // Copie Cc
 // $headers .= 'Bcc: ' . $copie_cachee . "\n\n"; // Copie cachée Bcc
-$message =  "<a href='http://localhost:8080/base/app/src/views/main_user_password_modify.php'>cliquez ici</a>";
+$message =  '<div style='.'"'.'width: 100%; text-align: center; font-weight: bold'.'"'.'></br><center><i><B>Changez votre mot de passe sur Camagru !</B></i></center></br></br><a href=http://localhost:8080/base/app/src/views/main_user_password_modify.php>Cliquez ici pour changer votre mot de passe.</a></br></BR><HR/><div style="width: 100%; text-align: right">&copy;Camagru.fr</div>';
 if (isset($_POST['login'], $_POST['email'])) {
     $_SESSION['loggued_on_user'] = $_POST['login'];
     $_SESSION['passwd_hash'] = get_password($_POST);
+    $_SESSION['tag'] = 'GOOD';
     $destinataire = $_POST['email'];
     $copie = 'pathibul.r@gmail.com';
     if (mail($destinataire, $objet, $message, $headers)){
