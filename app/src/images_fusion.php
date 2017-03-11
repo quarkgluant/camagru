@@ -5,12 +5,13 @@ if(!isset($_SESSION))
 {
 	session_start();
 }
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$image = $_POST['image'];
 	$image_incrustee = $_POST['image_incrustee'];
 	$login = $_SESSION['loggued_on_user'];
 
-	if (empty($image) || empty ($image_incrustee))
+	if (empty($image) || empty ($image_incrustee)|| !isset($image))
 	{
 		echo "ERREUR : les champs image et décor doivent être remplis !";
 		return;
