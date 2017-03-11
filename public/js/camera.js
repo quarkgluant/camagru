@@ -15,6 +15,7 @@ function videoError(e) {
 }
 var v,canvas,context,w,h;
 var imgtag = document.getElementById('imgtag');
+var imgtagsrc_initial = imgtag.src;
 var sel = document.getElementById('fileselect');
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -36,7 +37,7 @@ function draw(v,c,w,h) {
 }
 
 document.getElementById('save').addEventListener('click',function(e){
-        draw(v,context,w,h);    
+        draw(v,context,w,h);
 });
 
 var fr;
