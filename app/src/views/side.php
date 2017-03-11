@@ -3,7 +3,8 @@
 </br></br>
     <?php
     $nb_fichier = 0;
-    echo '<form method="post" action="javascript:decor()"><select id="decor">';
+    //echo '<form method="post" action="javascript:decor()"><select id="decor" onchange='javascript:decor()'>';
+    echo '<form method="post"><select id="decor" onchange="javascript:decor()">';
     //echo '<ul>';
     $dossier_ref = '../../../public/img/decor/';
     if (($dossier = opendir('../../../public/img/decor')))
@@ -18,7 +19,8 @@
                 echo '<option value="./' . $dossier_ref . $fichier . '">'. $fichier  . '</option>';
             } // On ferme le if (qui permet de n'afficher que les .png)
         } // On termine la boucle
-        echo '</select><input type="submit" value="Afficher le décor choisi" /></form>';
+        //echo '</select><input type="submit" value="Afficher le décor choisi" /></form>';
+        echo '</select></form>';
         echo '</br></br>Vous avez le choix entre <strong>' . $nb_fichier .'</strong> décors différents';
         closedir($dossier);
     }
