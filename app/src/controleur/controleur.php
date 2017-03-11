@@ -126,7 +126,7 @@ function delete_user() {
 
         try {
 
-            $users = array('login' => $_SESSION['loggued_on_user']);
+            $user = array('login' => $UTILISATEUR);
             delUser($user);
           } catch (Exception $e) {
             $message = $e->getMessage();
