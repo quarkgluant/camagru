@@ -1,4 +1,5 @@
 function fusion() {
+//  if (document.getElementById('imgtag').getAttribute('src') == "pictures/apic.png") {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '../images_fusion.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -12,4 +13,9 @@ function fusion() {
     console.log(params);
     window.location.reload();
     xhr.send(params);
+//  }
+//  else {
+//    alert("error picture is apic");
+//    return false;
+//  }
 }

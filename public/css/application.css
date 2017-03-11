@@ -37,7 +37,7 @@ background-image: url("https://www.eic.fr/content/externe/site/commun/images/fon
 background-repeat: no-repeat;
 background-attachment: scroll;
 background-position: 50% 50%;
-}0
+}
 .table1 {
 margin: 1px;
 margin-left: 2px;
@@ -123,7 +123,6 @@ font-style : italic ;
 font-family : monospace ;
 text-align : right ;
 }
-
 .main {
 width:80%;
 }
