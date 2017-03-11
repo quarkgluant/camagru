@@ -13,7 +13,7 @@
           if (strstr($fichier, '.png') || strstr($fichier, '.jpg') || strstr($fichier, '.jpeg') || strstr($fichier, '.gif'))
             {
                 $nb_fichier++; // On incrémente le compteur de 1
-                echo '&nbsp;&nbsp;<A href="#"><img id="imgtag4" src="./' . $dossier_ref . $fichier . '"width="75" height="75" style="border: 1px solid black;"/></A>&nbsp;&nbsp;<A href="#">Like/Unlike</A></BR>';
+                echo '&nbsp;&nbsp;<A href="#"><img id="imgtag4" src="./' . $dossier_ref . $fichier . '"width="75" height="75" style="border: 1px solid black;"/></A>&nbsp;&nbsp;<A href="#"><B>&#10084;</B></A></BR>';
                 if ($nb_fichier%10 == 0)
                   {
                       echo '</td><td>';
