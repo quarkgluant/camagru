@@ -10,5 +10,6 @@ function fusion() {
     };
     var params = 'image='+imgtag.src+'&image_incrustee='+decorPng.src;
     console.log(params);
+    window.location.reload();
     xhr.send(params);
 }
