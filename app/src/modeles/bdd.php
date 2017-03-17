@@ -1,52 +1,52 @@
 <?php
-function getBdd()
-{
-    $dsn = "mysql:host=localhost;dbname=camagru;charset=utf8";
-    $db_user = 'root';
-    $db_pass = 'root';
-    $bdd = new PDO($dsn,
-        $db_user,
-        $db_pass,
-        array(
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        ));
-    return $bdd;
-}
-
-
-class BDDAccess
-{
-    public $bdd;
-
-    public function __construct(
-        $dsn = "mysql:host=localhost;dbname=camagru;charset=utf8",
-        $db_user = "root",
-        $db_pass = "root")
-    {
-            $bdd = new PDO($dsn,
-                        $db_user,
-                        $db_pass,
-                        array(
-                            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-                        ) );
-            $this->bdd = $bdd;
-
-    }
-
-    public function countAllUsers()
-    {
-        $count = $this->db->query('select count(*) from t_users')->fetchColumn();
-        return $count;
-    }
-}
-
-
+// function getBdd()
+// {
+//     $dsn = "mysql:host=localhost;dbname=camagru;charset=utf8";
+//     $db_user = 'root';
+//     $db_pass = 'root';
+//     $bdd = new PDO($dsn,
+//         $db_user,
+//         $db_pass,
+//         array(
+//             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+//         ));
+//     return $bdd;
+// }
+//
+//
+// class BDDAccess
+// {
+//     public $bdd;
+//
+//     public function __construct(
+//         $dsn = "mysql:host=localhost;dbname=camagru;charset=utf8",
+//         $db_user = "root",
+//         $db_pass = "root")
+//     {
+//             $bdd = new PDO($dsn,
+//                         $db_user,
+//                         $db_pass,
+//                         array(
+//                             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+//                         ) );
+//             $this->bdd = $bdd;
+//
+//     }
+//
+//     public function countAllUsers()
+//     {
+//         $count = $this->db->query('select count(*) from t_users')->fetchColumn();
+//         return $count;
+//     }
+// }
+//
+//
 /**
  * Classe abstraite Modèle.
  * Centralise les services d'accès à une base de données.
  * Utilise l'API PDO
  *
- * @author Baptiste Pesquet
+ * @author Baptiste Pesquet et Patrice Cadiot
  */
 abstract class Modele {
 
@@ -66,6 +66,9 @@ abstract class Modele {
         }
         else {
             $resultat = $this->getBdd()->prepare($sql);  // requête préparée
+            // foreach ($params as $key => $value) {
+            //     $resultat->bindParam($key, $value);
+            // }
             $resultat->execute($params);
         }
         return $resultat;

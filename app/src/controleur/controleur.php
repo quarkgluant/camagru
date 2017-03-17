@@ -23,7 +23,8 @@ function identification_user() {
                         //On verifie si l'email est valide
                         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
                         {
-                            $users = getUsers();
+                            $utilisateur = new User();
+                            $users = $utilisateur->getUsers();
                             // var_dump($users);
                             if (empty($users))
                             {
@@ -33,8 +34,8 @@ function identification_user() {
                                     'email' => $_POST['email'],
                                     'password' => $passwd_hash
                                 );
-                                // var_dump($user);
-                                saveUser($user);
+                                var_dump($user);
+                                $utilisateur->saveUser($user);
                                 $_SESSION['passwd_hash'] = $passwd_hash;
                                 $_SESSION['loggued_on_user'] = $_POST['login'];
                                 $message = '1';
@@ -59,7 +60,7 @@ function identification_user() {
                                         // var_dump($user);
                                         $_SESSION['passwd_hash'] = $passwd_hash;
                                         $_SESSION['loggued_on_user'] = $_POST['login'];
-                                        saveUser($user);
+                                        $utilisateur->saveUser($user);
                                         $message = '1';
                                     }
                                 }
@@ -93,10 +94,10 @@ function identification_user() {
 function auth_user($login, $passwd)
 {
 	try {
+        $utilisateur = new User();
+        $users = $utilisateur->getUsers();
 
-        $users = getUsers();
-
-    	foreach($users as $entry)
+    	foreach ($users as $entry)
     	{
     		if ($entry['login'] == $login)
     		{
@@ -123,12 +124,13 @@ function auth_user($login, $passwd)
 function delete_user() {
     if (isset($_SESSION['loggued_on_user']))
     {
-        $UTILISATEUR = htmlspecialchars(trim($_SESSION['loggued_on_user']));
+        $login = htmlspecialchars(trim($_SESSION['loggued_on_user']));
+        $utilisateur = new User();
 
         try {
 
-            $user = array('login' => $UTILISATEUR);
-            delUser($user);
+            $user = array('login' => $login);
+            $utilisateur->delUser($user);
           } catch (Exception $e) {
             $message = $e->getMessage();
         }
@@ -139,7 +141,8 @@ function delete_user() {
 function get_mail($login)
 {
     try {
-        $users = getUsers();
+        $utilisateur = new User();
+        $users = $utilisateur->getUsers();
 
         // var_dump($users);
     	foreach($users as $entry)
@@ -158,7 +161,9 @@ function get_mail($login)
 function get_password($login)
 {
     try {
-    	$users = getUsers();
+        $utilisateur = new User();
+
+    	$users = $utilisateur->getUsers();
 
         // var_dump($users);
     	foreach($users as $entry)
@@ -186,8 +191,8 @@ function password_modify() {
                 //On verifie si le mot de passe a 8 caracteres ou plus
                 if (strlen($_POST['passnew']) >= 8)
                 {
-
-                        $users = getUsers();
+                        $utilisateur = new User();
+                        $users = $utilisateur->getUsers();
 
                         foreach($users as $user)
                         {
@@ -198,7 +203,7 @@ function password_modify() {
                                   'login' => $_SESSION['loggued_on_user'],
                                   'email' => $user['email'],
                                   'password' => $passwd_hash);
-                              majUser($user);
+                              $utilisateur->majUser($user);
                               //Si ca a fonctionne, on naffiche pas le formulaire
                               $message = "Votre mot de passe vient d'être correctement modifié.";
 
@@ -239,13 +244,14 @@ function email_modify() {
                     //On verifie si l'email est valide
                     if (filter_var($_POST['newemail'], FILTER_VALIDATE_EMAIL))
                     {
-                        $users = getUsers();
+                        $utilisateur = new User();
+                        $users = $utilisateur->getUsers();
                         foreach($users as $user)
                         {
                             if ($user['login'] === $_SESSION['loggued_on_user'])
                             {
                               $users = array('login' => $_SESSION['loggued_on_user'], 'email' => $user['email'], 'password' => $user['password']);
-                              majUser($user);
+                              $utilisateur->majUser($user);
                               //Si ca a fonctionne, on naffiche pas le formulaire
                               $message = "Votre mail d'être correctement modifié.";
                             }
