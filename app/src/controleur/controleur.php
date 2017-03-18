@@ -98,7 +98,7 @@ function auth_user($login, $passwd)
         return (0);
     } catch (Exception $e) {
         $message = $e->getMessage();
-        echo "<div>$message</div>";
+        echo '<html><HEAD><title id="'.'"title-doc"'.'">Camagru</title><meta content="'.'"camagru; sangare; pcadiot; 42; école 42; php"'.'" name="'.'"keywords"'.'"><Meta  charset ="'.'"UTF-8"'.'"><link rel="'.'"stylesheet"'.'" href="'.'"css/application.css"'.'"/></head><body><div>'.$message.'</div></body></html>';
     }
 }
 

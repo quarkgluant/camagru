@@ -19,3 +19,5 @@ $qr = $db->exec($sql);
 $sql = file_get_contents("base.sql");
 $qr = $db->exec($sql);
 echo 'setup completed'.PHP_EOL;
+
+?>
