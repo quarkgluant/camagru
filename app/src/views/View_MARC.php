@@ -1,4 +1,4 @@
-
+<?php
 function inclViews($nameView, $directive, array $array, $option = 1) {
        // declarer la gestion du cryptage pour crypter les chemins
        $cryptagePath = new inputDataHlp();

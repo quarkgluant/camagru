@@ -10,6 +10,5 @@ $message = password_modify();
 if ($message == '1') {
     header("Location: ../app/src/views/main_camagru.php");
     exit;
-}
-else
-  include_once __DIR__ . "/views/messages.php";
+} else
+    include_once __DIR__ . "/views/messages.php";

@@ -71,7 +71,8 @@
  *
  * @author Baptiste Pesquet et Patrice Cadiot
  */
-abstract class Modele {
+abstract class Modele
+{
 
     /** Objet PDO d'accès à la BD */
     private $bdd;
@@ -83,11 +84,11 @@ abstract class Modele {
      * @param array $valeurs Les valeurs associées à la requête
      * @return PDOStatement Le résultat renvoyé par la requête
      */
-    protected function executerRequete($sql, $params = null) {
+    protected function executerRequete($sql, $params = null)
+    {
         if ($params == null) {
             $resultat = $this->getBdd()->query($sql); // exécution directe
-        }
-        else {
+        } else {
             $resultat = $this->getBdd()->prepare($sql);  // requête préparée
             foreach ($params as $key => $value) {
                 $resultat->bindParam($key, $value);
@@ -102,7 +103,8 @@ abstract class Modele {
      *
      * @return PDO L'objet PDO de connexion à la BDD
      */
-    private function getBdd() {
+    private function getBdd()
+    {
         if ($this->bdd == null) {
             // Création de la connexion
             $this->bdd = new PDO(
