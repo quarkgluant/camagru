@@ -66,9 +66,9 @@ abstract class Modele {
         }
         else {
             $resultat = $this->getBdd()->prepare($sql);  // requête préparée
-            // foreach ($params as $key => $value) {
-            //     $resultat->bindParam($key, $value);
-            // }
+            foreach ($params as $key => $value) {
+                $resultat->bindParam($key, $value);
+            }
             $resultat->execute($params);
         }
         return $resultat;
@@ -82,9 +82,13 @@ abstract class Modele {
     private function getBdd() {
         if ($this->bdd == null) {
             // Création de la connexion
-            $this->bdd = new PDO('mysql:host=localhost;dbname=camagru;charset=utf8',
-                    'root', 'root',
-                    array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $this->bdd = new PDO(
+                'mysql:host=localhost;dbname=camagru;charset=utf8',
+                'root',
+                'root',
+                array(
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+                ));
         }
         return $this->bdd;
     }

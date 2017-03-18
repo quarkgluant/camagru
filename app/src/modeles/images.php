@@ -2,48 +2,48 @@
 
 require_once __DIR__ . '/bdd.php';
 
-// Renvoie la liste des images
-function getImages() {
-    $bdd = getBdd();
-    $users = $bdd->query('select IMG_PATH as path,'
-            . ' USER_LOGIN as login'
-            . ' from T_IMAGES')->fetchAll(PDO::FETCH_ASSOC);
-    return $users;
-}
+class Image extends Modele {
+    // Renvoie la liste des images
+    public function getImages() {
+        $sql = 'select IMG_PATH as path,'
+                . ' USER_LOGIN as login'
+                . ' from T_IMAGES';
 
-function saveImage(array $img)
-{
-    $bdd = getBdd();
-    $statement = $bdd->prepare(
-        'insert into T_IMAGES
-        (IMG_PATH, USER_LOGIN)
-        values
-        (:path, :user_login)'
-    );
-    $statement->bindParam(':path', $img['path']);
-    $statement->bindParam(':user_login', $img['login']);
+        $images = $this->executerRequete($sql);
+        return $images->fetchAll(PDO::FETCH_ASSOC);
+    }
 
-    $statement->execute();
-}
+    public function saveImage(array $img) {
+        $sql =
+            'insert into T_IMAGES
+            (IMG_PATH, USER_LOGIN)
+            values
+            (:path, :user_login)'
+        ;
 
-function countAllImages()
-{
-    $bdd = getBdd();
-    $count = $bdd->query('select count(*) from T_IMAGES')->fetchColumn();
-    return $count;
-}
+        $image_bind = array(
+            ':path'         => $img['path'],
+            ':user_login'   => $img['login']
+        );
+        $this->executerRequete($sql, $image_bind);
+    }
 
-function majImg(array $img) {
+    public function countAllImages() {
+        $sql = 'select count(*) from T_IMAGES';
+        $count = $this->executerRequete($sql)->fetchColumn();
+        return $count;
+    }
 
-    $bdd = getBdd();
+    public function majImg(array $img) {
+    	$sql = "UPDATE T_IMAGES SET
+            IMG_PATH = :path
+    		WHERE
+            USER_LOGIN = :login";
 
-	$requete = $pdo->prepare("UPDATE T_IMAGES SET
-        IMG_PATH = :path
-		WHERE
-        USER_LOGIN = :login");
-
-	$requete->bindParam(':path', $img['path']);
-	$requete->bindParam(':login', $img['login']);
-
-	return $requete->execute();
+        $image_bind = array(
+            ':path'         => $img['path'],
+            ':user_login'   => $img['login']
+        );
+    	$this->executerRequete($sql, $image_bind);
+    }
 }

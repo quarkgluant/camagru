@@ -34,7 +34,7 @@ function identification_user() {
                                     'email' => $_POST['email'],
                                     'password' => $passwd_hash
                                 );
-                                var_dump($user);
+                                // var_dump($user);
                                 $utilisateur->saveUser($user);
                                 $_SESSION['passwd_hash'] = $passwd_hash;
                                 $_SESSION['loggued_on_user'] = $_POST['login'];
@@ -42,7 +42,7 @@ function identification_user() {
                             }
                             else
                             {
-                                foreach($users as $user)
+                                foreach ($users as $user)
                                 {
                                     if ($user['login'] === $_POST['login'])
                                     {
@@ -62,6 +62,7 @@ function identification_user() {
                                         $_SESSION['loggued_on_user'] = $_POST['login'];
                                         $utilisateur->saveUser($user);
                                         $message = '1';
+                                        return $message;
                                     }
                                 }
                             }
@@ -128,7 +129,6 @@ function delete_user() {
         $utilisateur = new User();
 
         try {
-
             $user = array('login' => $login);
             $utilisateur->delUser($user);
           } catch (Exception $e) {
@@ -145,9 +145,9 @@ function get_mail($login)
         $users = $utilisateur->getUsers();
 
         // var_dump($users);
-    	foreach($users as $entry)
+    	foreach ($users as $entry)
     	{
-    		if ($entry['login'] == $login)
+    		if ($entry['login'] === $login)
     		{
     			return ($entry['email']);
     		}
@@ -166,9 +166,9 @@ function get_password($login)
     	$users = $utilisateur->getUsers();
 
         // var_dump($users);
-    	foreach($users as $entry)
+    	foreach ($users as $entry)
     	{
-    		if ($entry['login'] == $login)
+    		if ($entry['login'] === $login)
     		{
     			return ($entry['password']);
     		}
@@ -186,7 +186,7 @@ function password_modify() {
         $_POST['passnewverif'] = htmlspecialchars(trim($_POST['passnewverif']));
         try {
             // On verifie si le mot de passe et celui de la verification sont identiques
-            if ($_POST['passnew'] == $_POST['passnewverif'])
+            if ($_POST['passnew'] === $_POST['passnewverif'])
             {
                 //On verifie si le mot de passe a 8 caracteres ou plus
                 if (strlen($_POST['passnew']) >= 8)
@@ -194,7 +194,7 @@ function password_modify() {
                         $utilisateur = new User();
                         $users = $utilisateur->getUsers();
 
-                        foreach($users as $user)
+                        foreach ($users as $user)
                         {
                             if ($user['login'] === $_SESSION['loggued_on_user'])
                             {
@@ -235,6 +235,7 @@ function password_modify() {
 }
 
 function email_modify() {
+
     if (isset($_POST['newemail']))
     {
         $_POST['newemail'] = htmlspecialchars(trim($_POST['newemail']));
@@ -246,7 +247,7 @@ function email_modify() {
                     {
                         $utilisateur = new User();
                         $users = $utilisateur->getUsers();
-                        foreach($users as $user)
+                        foreach ($users as $user)
                         {
                             if ($user['login'] === $_SESSION['loggued_on_user'])
                             {
@@ -276,9 +277,10 @@ function email_modify() {
 }
 
 function sauvegarde_image(array $img){
+    $image = new Image();
     try {
-        saveImage($img);
-    }catch (Exception $e) {
+        $image->saveImage($img);
+    } catch (Exception $e) {
         $message = $e->getMessage();
     }
 
