@@ -1,5 +1,5 @@
 <header>
-    <center><h1><B> Vous êtes connecté à Camagru !</B></h1></center>
+    <center><h1><B> <?= $_SESSION['loggued_on_user'] ?>, Vous êtes connecté à Camagru !</B></h1></center>
 </br> </br>
     <nav>
         <ul id="menu">
