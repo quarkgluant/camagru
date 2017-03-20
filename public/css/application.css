@@ -1,3 +1,12 @@
+html {
+    color: black;
+    background-color: #DEB887;
+    background-image: url("https://www.eic.fr/content/externe/site/commun/images/fond.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 50% 50%;
+}
+
 h1 {
     color :  #000000 ;
     text-align : center ;
@@ -40,15 +49,6 @@ header {
     background-color: darkgrey;
     border-radius: 25%;
     /* display: flex; */
-}
-
-html {
-    color: black;
-    background-color: #DEB887;
-    background-image: url("https://www.eic.fr/content/externe/site/commun/images/fond.png");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: 50% 50%;
 }
 
 .table1 {
