@@ -1,4 +1,3 @@
-<style type="text/css">
 h1 {
     color :  #000000 ;
     text-align : center ;
@@ -60,13 +59,13 @@ input[type=submit]:active, input[type=reset]:active {
 	text-shadow: 1px 1px 1px #5079A3;
 }
 input[type=submit]:hover, input[type=reset]:hover {
-	 background: #3EB1DD;
-		border: none;
-		color: #FFF;
-		box-shadow: 1px 1px 1px #4C6E91;
-		-webkit-box-shadow: 1px 1px 1px #4C6E91;
-		-moz-box-shadow: 1px 1px 1px #4C6E91;
-		text-shadow: 1px 1px 1px #5079A3;
+    background: #3EB1DD;
+    border: none;
+    color: #FFF;
+    box-shadow: 1px 1px 1px #4C6E91;
+    -webkit-box-shadow: 1px 1px 1px #4C6E91;
+    -moz-box-shadow: 1px 1px 1px #4C6E91;
+    text-shadow: 1px 1px 1px #5079A3;
  }
 #menu li {
     display:inline-block;
@@ -120,39 +119,37 @@ input[type=submit]:hover, input[type=reset]:hover {
     border: 2px red solid;
 }
 .copyright {
-font-style : italic ;
-font-family : monospace ;
-text-align : right ;
+    font-style : italic ;
+    font-family : monospace ;
+    text-align : right ;
 }
 .main {
-width:80%;
+    width:80%;
 }
 
 .side {
 	width:20%;
 }
 .copyright {
-font-style : italic ;
-font-family : monospace ;
-text-align : right ;
+    font-style : italic ;
+    font-family : monospace ;
+    text-align : right ;
 }
 
 :link {
-color: #0000ee;
-font-style : italic ;
-font-family : monospace ;
+    color: #0000ee;
+    font-style : italic ;
+    font-family : monospace ;
 }
 
 :link:active {
-color: #ee0000;
-font-style : italic ;
-font-family : monospace ;
+    color: #ee0000;
+    font-style : italic ;
+    font-family : monospace ;
 }
 
 :link:visited {
-color: #551a8b;
-font-style : italic ;
-font-family : monospace ;
+    color: #551a8b;
+    font-style : italic ;
+    font-family : monospace ;
 }
-
-</style>
