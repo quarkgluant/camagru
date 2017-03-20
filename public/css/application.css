@@ -38,6 +38,7 @@ div
 header {
     color: black;
     background-color: darkgrey;
+    border-radius: 25%;
 }
 
 html {
@@ -47,10 +48,6 @@ html {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: 50% 50%;
-}
-
-#header {
-    background-color: #DEFC998;
 }
 
 .table1 {
