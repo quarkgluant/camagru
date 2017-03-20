@@ -2,38 +2,57 @@ h1 {
     color :  #000000 ;
     text-align : center ;
 }
+
 h2 {
     color: red;
     font-style : bold ;
     font-family : monospace ;
     text-align : center;
 }
+
 h3 {
     font-style : bold ;
     text-align : right;
 }
+
 h4 {
     color: red;
     font-style : bold ;
     font-family : monospace ;
     text-align : center;
 }
+
 h5 {
     color: green;
     font-style : bold ;
     font-family : monospace ;
     text-align : center;
 }
+
 div
 {
     font-style : italic ;
     font-family : monospace ;
 }
+
+header {
+    color: black;
+    background-color: darkgrey;
+}
+
 html {
     color: black;
     background-color: #DEB887;
-    background-image: url("https://www.eic.fr/content/externe/site/commun/images/fond.png");background-repeat: no-repeat;background-attachment: scroll;background-position: 50% 50%;
+    background-image: url("https://www.eic.fr/content/externe/site/commun/images/fond.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 50% 50%;
 }
+
+#header {
+    background-color: #DEFC998;
+}
+
 .table1 {
     margin: 1px;
     margin-left: 2px;
