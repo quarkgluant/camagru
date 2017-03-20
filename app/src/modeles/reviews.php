@@ -78,7 +78,8 @@ class Review extends Modele
             . ' REV_TEXT as comment,'
             . ' IMG_ID as id'
             . ' from T_REVIEWS'
-            . ' where USER_LOGIN = :login';
+            . ' where USER_LOGIN = :login'
+            . ' order by REV_DATE DESC';
 
         $reviews_bind = array(
             ':login' => $reviews['login']
@@ -86,4 +87,22 @@ class Review extends Modele
 
         $this->executerRequete($sql, $reviews_bind);
     }
+
+    public function listByImage(array $user)
+    {
+        $sql = 'select '
+            . ' REV_TEXT as comment,'
+            . ' USER_LOGIN as login'
+            . ' from T_REVIEWS'
+            . ' where IMG_ID = :id'
+            . ' order by REV_DATE DESC';
+
+        $reviews_bind = array(
+            ':id' => $reviews['img_id']
+        );
+
+        $this->executerRequete($sql, $reviews_bind);
+    }
+
+
 }

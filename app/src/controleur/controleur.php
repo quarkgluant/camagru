@@ -147,6 +147,8 @@ function get_password($login)
         foreach ($users as $entry) {
             if ($entry['login'] === $login) {
                 return ($entry['password']);
+            } else {
+                return false;
             }
         }
     } catch (Exception $e) {
