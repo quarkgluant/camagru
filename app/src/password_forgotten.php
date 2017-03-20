@@ -23,7 +23,7 @@ if (isset($_POST['login'], $_POST['email'])) {
     $connu_au_bataillon = get_password($_POST['login']);
     if ($connu_au_bataillon)
     {
-        $_SESSION['passwd_hash'] = get_password($_POST['login']);
+        $_SESSION['passwd_hash'] = $connu_au_bataillon;
         $_SESSION['tag'] = 'GOOD';
         $destinataire = $_POST['email'];
         $copie = 'pathibul.r@gmail.com';
