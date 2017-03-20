@@ -30,7 +30,9 @@ div
     font-family : monospace ;
 }
 html {
-    color: black;background-color: lavender;background-image: url("https://www.eic.fr/content/externe/site/commun/images/fond.png");background-repeat: no-repeat;background-attachment: scroll;background-position: 50% 50%;
+    color: black;
+    background-color: #DEB887;
+    background-image: url("https://www.eic.fr/content/externe/site/commun/images/fond.png");background-repeat: no-repeat;background-attachment: scroll;background-position: 50% 50%;
 }
 .table1 {
     margin: 1px;
