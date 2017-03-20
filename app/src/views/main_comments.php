@@ -44,7 +44,7 @@ include_once __DIR__ . "/../controleur/controleur.php";
                 <tr>
                 <?php
                   $email = get_mail($_SESSION['loggued_on_user']);
-                  include __DIR__ . '/coments.php';
+                  include __DIR__ . '/comments.php';
                 ?>
 
           </tr>
