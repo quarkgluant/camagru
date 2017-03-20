@@ -1,4 +1,4 @@
-<header>
+<header id="header">
     <center><h1><B> <?= ucfirst($_SESSION['loggued_on_user']) ?>, Vous êtes connecté à Camagru !</B></h1></center>
 </br> </br>
     <nav>
