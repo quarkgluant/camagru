@@ -75,7 +75,7 @@ abstract class Modele
 {
 
     /** Objet PDO d'accès à la BD */
-    private $bdd;
+    private $_bdd;
 
     /**
      * Exécute une requête SQL éventuellement paramétrée
@@ -105,9 +105,9 @@ abstract class Modele
      */
     private function getBdd()
     {
-        if ($this->bdd == null) {
+        if ($this->_bdd == null) {
             // Création de la connexion
-            $this->bdd = new PDO(
+            $this->_bdd = new PDO(
                 'mysql:host=localhost;dbname=camagru;charset=utf8',
                 'root',
                 'root',
@@ -115,7 +115,7 @@ abstract class Modele
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
                 ));
         }
-        return $this->bdd;
+        return $this->_bdd;
     }
 
 }
