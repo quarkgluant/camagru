@@ -39,6 +39,7 @@ header {
     color: black;
     background-color: darkgrey;
     border-radius: 25%;
+    /* display: flex; */
 }
 
 html {
@@ -58,9 +59,11 @@ html {
     position: relative;
     border: 1px solid black;
 }
+
 .main {
     width:20%;
 }
+
 input[type=submit]:active, input[type=reset]:active {
     background: #66C1E4;
     border: none;
@@ -70,6 +73,7 @@ input[type=submit]:active, input[type=reset]:active {
     -moz-box-shadow: 1px 1px 1px #4C6E91;
     text-shadow: 1px 1px 1px #5079A3;
 }
+
 input[type=submit]:hover, input[type=reset]:hover {
     background: #3EB1DD;
     border: none;
@@ -79,12 +83,19 @@ input[type=submit]:hover, input[type=reset]:hover {
     -moz-box-shadow: 1px 1px 1px #4C6E91;
     text-shadow: 1px 1px 1px #5079A3;
 }
-#menu li {
-    display:inline-block;
+
+#menu {
+    display: flex;
+    list-style-type: none;
 }
 
-#menu li a {
-    display:inline-block;
+#menu li {
+    margin: auto;
+    justify-content: center;
+}
+
+#menu li a{
+
     padding: 5px 10px;
     border: 1px solid black;
     border-radius: 20px;
@@ -95,46 +106,54 @@ input[type=submit]:hover, input[type=reset]:hover {
     text-align: center;
     margin: 0 10px;
 }
+
 #menu li a:hover {
     background: black;
     border: 1px solid black;
     color: white;
 }
+
 #container {
     margin: 0px auto;
     width: 500px;
     height: 375px;
     border: 2px #333 solid;
 }
+
 #videoElement {
     margin: 0px auto;
     width: 500px;
     height: 375px;
     background-color: #666;
 }
+
 #canvas {
     margin: 0px auto;
     width: 0px;
     height: 0px;
     background-color: transparent;;
 }
+
 #container2 {
     margin: 0px auto;
     width: 500px;
     height: 375px;
     border: 2px blue solid;
 }
+
 #container3 {
     margin: 0px auto;
     width: 500px;
     height: 375px;
     border: 2px red solid;
 }
+
 .copyright {
     font-style : italic ;
     font-family : monospace ;
     text-align : right ;
 }
+
 .main {
     width:80%;
 }
@@ -142,6 +161,7 @@ input[type=submit]:hover, input[type=reset]:hover {
 .side {
     width:20%;
 }
+
 .copyright {
     font-style : italic ;
     font-family : monospace ;
