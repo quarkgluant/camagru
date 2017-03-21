@@ -9,13 +9,13 @@ include_once __DIR__ . "/controleur/controleur.php";
 $image = get_image_by_user(array(
     'login' => $_SESSION['loggued_on_user']
 ));
-var_dump($image);
+// var_dump($image);
 $commentaire = array(
     'login' => $_SESSION['loggued_on_user'],
     'comment' => $_POST['comment'],
     'img_id' => $image['img_id']
 );
-var_dump($commentaire);
+// var_dump($commentaire);
 $message = sauvegarde_review($commentaire);
 if (!$message){
   include_once __DIR__ . "/comments_mail.php";
