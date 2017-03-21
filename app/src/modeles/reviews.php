@@ -82,26 +82,28 @@ class Review extends Modele
             . ' order by REV_DATE DESC';
 
         $reviews_bind = array(
-            ':login' => $reviews['login']
+            ':login' => $user['login']
         );
 
-        $this->executerRequete($sql, $reviews_bind);
+        $reviews = $this->executerRequete($sql, $reviews_bind);
+        return $reviews->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function listByImage(array $user)
+    public function listByImage(array $image)
     {
         $sql = 'select '
-            . ' REV_TEXT as comment,'
+            . ' REV_TEXT as review,'
             . ' USER_LOGIN as login'
             . ' from T_REVIEWS'
-            . ' where IMG_ID = :id'
+            . ' where IMG_ID = :img_id'
             . ' order by REV_DATE DESC';
 
         $reviews_bind = array(
-            ':id' => $reviews['img_id']
+            ':img_id' => $image['img_id']
         );
 
-        $this->executerRequete($sql, $reviews_bind);
+        $reviews = $this->executerRequete($sql, $reviews_bind);
+        return $reviews->fetchAll(PDO::FETCH_ASSOC);
     }
 
 

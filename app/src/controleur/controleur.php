@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../modeles/bdd.php';
 require_once __DIR__ . '/../modeles/membres.php';
 require_once __DIR__ . '/../modeles/images.php';
+require_once __DIR__ . '/../modeles/reviews.php';
 
 // vérifie identification utilisateur
 function identification_user()
@@ -263,6 +264,16 @@ function sauvegarde_review(array $comment)
     $review = new Review();
     try {
         $review->saveReview($comment);
+    } catch (Exception $e) {
+        return $message = $e->getMessage();
+    }
+}
+
+function get_reviews_by_image(array $image)
+{
+    $reviews = new Review();
+    try {
+        return $reviews->listByImage($image);
     } catch (Exception $e) {
         return $message = $e->getMessage();
     }

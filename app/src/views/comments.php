@@ -14,6 +14,14 @@
               <a href="../views/main_camagru.php"> Revenir à la page précédente !!!! </a>
          <?php
          echo '<a href="main_comments2.php?image='.$_GET['image'].'"> Ajouter un commentaire à la photo !!!! </a>';
+         $image = get_image_by_user(array(
+             'login' => $_SESSION['loggued_on_user']
+         ));
+         var_dump($image);
+         $reviews = get_reviews_by_image(array(
+             $image['img_id']
+         ));
+         var_dump($reviews);
          ?>
 
          </li>
@@ -23,20 +31,11 @@
       </tr>
       <tr>
           <td><div>Login</div></br></br></td><td><div>Commentaires :</div></br></br></td></tr>
-
+          <?php foreach ($reviews as $review): ?>
             <tr>
-              <td>Login 1 : </td>
-              <td>ccccccccccccccccccccccccc</td>
+              <td><?= $review['login']?></td>
+              <td><?= $review['review']?></td>
             </tr>
-
-            <tr>
-              <td>Login 2 : </td>
-              <td>ccccccccccccccccccccccccc</td>
-            </tr>
-
-            <tr>
-              <td>Login 3 : </td>
-              <td>ccccccccccccccccccccccccc</td>
-            </tr>
+        <?php endforeach; ?>
 
 </table>
