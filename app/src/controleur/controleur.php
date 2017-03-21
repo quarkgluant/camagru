@@ -245,5 +245,14 @@ function sauvegarde_image(array $img)
     } catch (Exception $e) {
         $message = $e->getMessage();
     }
+}
 
+function sauvegarde_review(array $comment)
+{
+    $review = new Review();
+    try {
+        $review->saveReview($comment);
+    } catch (Exception $e) {
+        $message = $e->getMessage();
+    }
 }

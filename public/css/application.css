@@ -44,11 +44,14 @@ div
     font-family : monospace ;
 }
 
-header {
+/*header {
     color: black;
-    background-color: darkgrey;
+    background-color: DarkSalmon;
     border-radius: 25%;
-    /* display: flex; */
+    -moz-opacity:0.5;
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+    display: flex; */
 }
 
 .table1 {
