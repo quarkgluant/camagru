@@ -25,9 +25,9 @@ class Review extends Modele
             . '(:login, :comment, :id)';
 
         $reviews_bind = array(
-            ':login' => $reviews['login'],
-            ':comment' => $reviews['comment'],
-            ':id' => $reviews['img_id']
+            ':login' => $review['login'],
+            ':comment' => $review['comment'],
+            ':id' => $review['img_id']
         );
 
         $this->executerRequete($sql, $reviews_bind);

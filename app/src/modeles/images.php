@@ -5,7 +5,7 @@ require_once __DIR__ . '/bdd.php';
 class Image extends Modele
 {
     // Renvoie la liste des images
-    public function getImages()
+    public function getAllImages()
     {
         $sql = 'select IMG_PATH as path,'
             . ' USER_LOGIN as login'
@@ -13,6 +13,23 @@ class Image extends Modele
 
         $images = $this->executerRequete($sql);
         return $images->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getImageByUser($user)
+    {
+        $sql = 'select IMG_ID as img_id,'
+            . ' IMG_PATH as path from T_IMAGES'
+            . ' WHERE USER_LOGIN = :login';
+
+        $image_bind = array(
+            ':login' => $user['login']
+        );
+        $image = $this->executerRequete($sql, $image_bind);
+        // return $image->fetch();
+        if ($image->rowCount() > 0)
+            return $image->fetch(PDO::FETCH_ASSOC);  // Accès à la première ligne de résultat
+        else
+            throw new Exception("Aucune image ne correspond à l'identifiant '$user'");
     }
 
     public function saveImage(array $img)

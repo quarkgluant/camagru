@@ -237,13 +237,24 @@ function email_modify()
     }
 }
 
+function get_image_by_user(array $user)
+{
+    $image = new Image();
+    try {
+        return $image->getImageByUser($user);
+    } catch (Exception $e) {
+        $message = $e->getMessage();
+    }
+    return $message;
+}
+
 function sauvegarde_image(array $img)
 {
     $image = new Image();
     try {
         $image->saveImage($img);
     } catch (Exception $e) {
-        $message = $e->getMessage();
+        return $message = $e->getMessage();
     }
 }
 
@@ -253,6 +264,6 @@ function sauvegarde_review(array $comment)
     try {
         $review->saveReview($comment);
     } catch (Exception $e) {
-        $message = $e->getMessage();
+        return $message = $e->getMessage();
     }
 }
