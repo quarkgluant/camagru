@@ -31,7 +31,7 @@ class Like extends Modele
         $this->executerRequete($sql, $like_bind);
     }
 
-    public function countLikesByImage()
+    public function countLikesByImage(array $like)
     {
         $sql = 'select count(*) from T_LIKES  where IMG_ID = :img_id';
         $like_bind = array(

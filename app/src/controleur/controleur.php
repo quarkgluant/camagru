@@ -3,6 +3,7 @@ require_once __DIR__ . '/../modeles/bdd.php';
 require_once __DIR__ . '/../modeles/membres.php';
 require_once __DIR__ . '/../modeles/images.php';
 require_once __DIR__ . '/../modeles/reviews.php';
+require_once __DIR__ . '/../modeles/likes.php';
 
 // vérifie identification utilisateur
 function identification_user()
@@ -274,6 +275,26 @@ function get_reviews_by_image(array $image)
     $reviews = new Review();
     try {
         return $reviews->listByImage($image);
+    } catch (Exception $e) {
+        return $message = $e->getMessage();
+    }
+}
+
+function sauvegarde_like(array $like)
+{
+    $like = new Like();
+    try {
+        $like->saveLike($like);
+    } catch (Exception $e) {
+        return $message = $e->getMessage();
+    }
+}
+
+function get_likes_by_image(array $image)
+{
+    $like = new Like();
+    try {
+        return $like->countLikesByImage($image);
     } catch (Exception $e) {
         return $message = $e->getMessage();
     }
