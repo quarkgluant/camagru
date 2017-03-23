@@ -17,11 +17,9 @@
          $image = get_image_by_user(array(
              'login' => $_SESSION['loggued_on_user']
          ));
-         var_dump($image);
-         $reviews = get_reviews_by_image(array(
-             $image['img_id']
-         ));
-         var_dump($reviews);
+        //  var_dump($image);
+         $reviews = get_reviews_by_image($image);
+        //  var_dump($reviews);
          ?>
 
          </li>
