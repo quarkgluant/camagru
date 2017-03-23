@@ -14,7 +14,10 @@ function fusion() {
         var params = 'image='+imgtag.src+'&image_incrustee='+decorPng.src;
         console.log(params);
         xhr.send(params);
-        setTimeout(function(){ window.location.reload(); }, 5000);
+        setTimeout(function(){
+            window.location.reload();
+         },
+          5000);
     }
     else {
         alert("veuillez prendre la photo dans/de votre tronche");

@@ -2,52 +2,59 @@
 
 require_once __DIR__ . '/bdd.php';
 
-class Image extends Modele
+class Like extends Modele
 {
     // Renvoie la liste des images
-    public function getImages()
+    public function getLikes()
     {
-        $sql = 'select IMG_PATH as path,'
+        $sql = 'select LIK_ID as like_id,'
             . ' USER_LOGIN as login'
-            . ' from T_IMAGES';
+            . ' from T_LIKES'
+            . ' where IMG_ID = :img_id';
 
-        $images = $this->executerRequete($sql);
-        return $images->fetchAll(PDO::FETCH_ASSOC);
+        $likes = $this->executerRequete($sql);
+        return $likes->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function saveImage(array $img)
+    public function saveLike(array $like)
     {
         $sql =
-            'insert into T_IMAGES
-            (IMG_PATH, USER_LOGIN)
+            'insert into T_LIKES
+            (IMG_ID, USER_LOGIN)
             values
-            (:path, :user_login)';
+            (:img_id, :user_login)';
 
-        $image_bind = array(
-            ':path' => $img['path'],
-            ':user_login' => $img['login']
+        $like_bind = array(
+            ':img_id'       => $like['img_id'],
+            ':user_login'   => $like['login']
         );
-        $this->executerRequete($sql, $image_bind);
+        $this->executerRequete($sql, $like_bind);
     }
 
-    public function countAllImages()
+    public function countLikesByImage()
     {
-        $sql = 'select count(*) from T_IMAGES';
+        $sql = 'select count(*) from T_LIKES  where IMG_ID = :img_id';
+        $like_bind = array(
+            ':imd_id' => $like['img_id']
+        );
         $count = $this->executerRequete($sql)->fetchColumn();
         return $count;
     }
 
-    public function majImg(array $img)
+    public function majLike(array $like)
     {
-        $sql = "UPDATE T_IMAGES SET
-            IMG_PATH = :path
+        $sql = "UPDATE T_LIKES SET
+            IMG_ID = :img_id,
+            USER_LOGIN = :login,
+            LIK_UPDATE = :lik_update
     		WHERE
             USER_LOGIN = :login";
 
-        $image_bind = array(
-            ':path' => $img['path'],
-            ':user_login' => $img['login']
+        $like_bind = array(
+            ':img_id'       => $like['img_id'],
+            ':user_login'   => $like['login'],
+            ':lik_update'   => date(DATE_W3C)
         );
-        $this->executerRequete($sql, $image_bind);
+        $this->executerRequete($sql, $like_bind);
     }
 }
