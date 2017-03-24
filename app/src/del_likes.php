@@ -10,12 +10,12 @@ $image = get_image_by_user(array(
     'login' => $_SESSION['loggued_on_user']
 ));
 
-$like = array(
+$unlike = array(
     'img_id' => $image['img_id'],
     'login' => $_SESSION['loggued_on_user']
 );
 
-$message = sauvegarde_like($like);
+$message = unlike_like($unlike);
 if (!$message){
   header("Location: ./views/main_camagru.php");
 }

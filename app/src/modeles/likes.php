@@ -34,10 +34,11 @@ class Like extends Modele
     public function countLikesByImage(array $like)
     {
         $sql = 'select count(*) from T_LIKES  where IMG_ID = :img_id';
+
         $like_bind = array(
             ':img_id' => $like['img_id']
         );
-        $count = $this->executerRequete($sql)->fetchColumn();
+        $count = $this->executerRequete($sql, $like_bind)->fetchColumn();
         return $count;
     }
 
@@ -55,6 +56,20 @@ class Like extends Modele
             ':user_login'   => $like['login'],
             ':lik_update'   => date(DATE_W3C)
         );
+        $this->executerRequete($sql, $like_bind);
+    }
+
+    public function dellike(array $like)
+    {
+        $sql = "DELETE FROM T_LIKES
+                WHERE
+                IMG_ID = :img_id and USER_LOGIN = :login limit 1";
+
+        $like_bind = array(
+            ':img_id'       => $like['img_id'],
+            ':login'   => $like['login']
+          );
+
         $this->executerRequete($sql, $like_bind);
     }
 }

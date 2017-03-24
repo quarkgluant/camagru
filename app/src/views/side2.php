@@ -21,12 +21,12 @@
                   'img_id' => $image['img_id']
                 );
 
-                //$nb_heart = get_likes_by_image($image_id);
+                $nb_heart = get_likes_by_image($image_id);
                 echo '&nbsp;&nbsp;<A href="./main_comments.php?image='. $fichier
                     .'"><img id="imgtag4" src="./' . $dossier_ref . $fichier
                     . '"width="75" height="75" style="border: 1px solid black;" title="Cliquez pour accéder aux commentaires"/></A>&nbsp;'
-                    . $nb_heart .'&nbsp;<A href="#"><img src=" ./'
-                    . $dossier_heart .'1.png" width="12" height="12"></A>&nbsp;<A href="#"><img src=" ./'
+                    . $nb_heart .'&nbsp;<A href="../add_likes.php"><img src=" ./'
+                    . $dossier_heart .'1.png" width="12" height="12"></A>&nbsp;<A href="../del_likes.php"><img src=" ./'
                     . $dossier_heart .'4.png" width="12" height="12"></A></BR>';
                 if ($nb_fichier%10 == 0)
                   {

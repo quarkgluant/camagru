@@ -282,9 +282,19 @@ function get_reviews_by_image(array $image)
 
 function sauvegarde_like(array $like)
 {
-    $like = new Like();
+    $liki = new Like();
     try {
-        $like->saveLike($like);
+        $liki->saveLike($like);
+    } catch (Exception $e) {
+        return $message = $e->getMessage();
+    }
+}
+
+function unlike_like(array $unlike)
+{
+    $unliki = new Like();
+    try {
+        $unliki->dellike($unlike);
     } catch (Exception $e) {
         return $message = $e->getMessage();
     }
