@@ -11,7 +11,7 @@ $expediteur = 'pathibul.r@gmail.com';
 
 // recuperer user ayant cree l'image
 
-$destinataire = get_mail($_POST['login']);
+$destinataire = get_mail($_SESSION['loggued_on_user']);
 $_SESSION['tag'] = 'GOOD';
 $objet = "Confirmation Inscription " . $destinataire; // Objet du message
 $headers = 'MIME-Version: 1.0' . "\n"; // Version MIME
@@ -21,7 +21,7 @@ $headers .= 'From: "Camagru contact"<' . $expediteur . '>' . "\n"; // Expediteur
 $headers .= 'Delivered-to: ' . $destinataire . "\n"; // Destinataire
 // $headers .= 'Cc: ' . $copie . "\n"; // Copie Cc
 // $headers .= 'Bcc: ' . $copie_cachee . "\n\n"; // Copie cachée Bcc
-$message = '<div style=' . '"' . 'width: 100%; text-align: center; font-weight: bold' . '"' . '></br><center><i><B>'.$_POST['login'].' : Vous venez de faire le commentaire suivant sur le site Camagru !</B></i></center></br>'.$_POST['comment'].'</br></br>Pour image suivante : '.$_POST['image_hidden'].'</br></br></BR><HR/><div style="width: 100%; text-align: right">&copy;Camagru.fr</div>';
+$message = '<div style=' . '"' . 'width: 100%; text-align: center; font-weight: bold' . '"' . '></br></br>Image : '.$_POST['image_hidden'].'</br><center><i><B>'.$_SESSION['loggued_on_user'].' : Vous venez de faire le commentaire suivant sur le site Camagru !</B></i></center></br>'.$_POST['comment'].'</br></br></BR><HR/><div style="width: 100%; text-align: right">&copy;Camagru.fr</div>';
 //        $copie = 'pathibul.r@gmail.com';
     if (mail($destinataire, $objet, $message, $headers)) {
             ?>

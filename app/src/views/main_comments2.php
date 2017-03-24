@@ -1,6 +1,9 @@
 <?php
 session_start();
 include_once __DIR__ . "/../modeles/membres.php";
+include_once __DIR__ . "/../modeles/images.php";
+include_once __DIR__ . "/../modeles/reviews.php";
+include_once __DIR__ . "/../modeles/likes.php";
 include_once __DIR__ . "/../controleur/controleur.php";
 
 ?>

@@ -11,7 +11,11 @@
 
          <ul id="menu">
              <li>
-         <a href="../views/main_comments.php"> Revenir à la page précédente !!!! </a></li>
+
+               <?php
+               echo '<a href="../views/main_comments.php?image='.$_GET['image'].'"> Revenir à la page précédente !!!! </a></li>';
+              ?>
+
          </ul>
        </br></br>
         </td>
@@ -29,7 +33,7 @@
                 <form method="post" action="../add_comments.php">
 
 <?php
-                echo '<input type="hidden" name="image_hidden" value="'. $dossier_ref . $_GET['image'] . '">';
+                echo '<input type="hidden" name="image_hidden" value="'.$_GET['image'] . '">';
 ?>
                 <TEXTAREA name="comment" rows=10 cols=120 wrap="physical" placeholder="Votre commentaire."/></TEXTAREA>
               </BR><input type="submit" value="Valider commentaire">

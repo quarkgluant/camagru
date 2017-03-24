@@ -13,13 +13,13 @@
              <li>
               <a href="../views/main_camagru.php"> Revenir à la page précédente !!!! </a>
          <?php
-         echo '<a href="main_comments2.php?image='.$_GET['image'].'"> Ajouter un commentaire à la photo !!!! </a>';
+         echo '<a href="main_comments2.php?image='.$_GET['image'].'"> Ajouter un commentaire à la photo !!!! </a> <A>Supprimer la photo !</A>';
          $image = get_image_by_user(array(
              'login' => $_SESSION['loggued_on_user']
          ));
-        //  var_dump($image);
+
          $reviews = get_reviews_by_image($image);
-        //  var_dump($reviews);
+
          ?>
 
          </li>
