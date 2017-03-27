@@ -24,3 +24,4 @@ if (!$message){
 
 include_once __DIR__ . "/views/messages.php";
 echo ob_get_clean();
+    ?>

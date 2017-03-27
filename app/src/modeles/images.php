@@ -80,3 +80,4 @@ class Image extends Modele
         $this->executerRequete($sql, $image_bind);
     }
 }
+    ?>
