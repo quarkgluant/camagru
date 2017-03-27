@@ -12,7 +12,7 @@ $message = identification_user();
 if ($message == '1')
 {
     include_once __DIR__ . "/user_create_mail.php";
-    header('Location: ./views/main_camagru.php');
+    header('Location: ./views/main_camagru.php?nb_page=0');
     exit();
 }
 else

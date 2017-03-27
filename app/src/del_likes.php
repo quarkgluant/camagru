@@ -6,8 +6,10 @@ include_once __DIR__ . "/modeles/images.php";
 include_once __DIR__ . "/modeles/likes.php";
 include_once __DIR__ . "/controleur/controleur.php";
 
-$image = get_image_by_user(array(
-    'login' => $_SESSION['loggued_on_user']
+$dossier_ref2 = '../../public/img/save/';
+$image_path = $dossier_ref2.$_GET['image_del'];
+$image = get_image_by_path(array(
+    'image_path' => $image_path
 ));
 
 $unlike = array(

@@ -72,4 +72,18 @@ class Like extends Modele
 
         $this->executerRequete($sql, $like_bind);
     }
+
+    public function dellikeall(array $like)
+    {
+        $sql = "DELETE FROM T_LIKES
+                WHERE
+                IMG_ID = :img_id and USER_LOGIN = :login";
+
+        $like_bind = array(
+            ':img_id'       => $like['img_id'],
+            ':login'   => $like['login']
+          );
+
+        $this->executerRequete($sql, $like_bind);
+    }
 }

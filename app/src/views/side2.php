@@ -5,6 +5,7 @@
     $nb_fichier = 0;
 
     $dossier_ref = '../../../public/img/save/';
+    $dossier_ref2 = '../../public/img/save/';
     $dossier_heart = '../../../public/img/heart/';
 
     if (($dossier = opendir('../../../public/img/save')))
@@ -14,8 +15,9 @@
           if (strstr($fichier, '.png') || strstr($fichier, '.jpg') || strstr($fichier, '.jpeg') || strstr($fichier, '.gif'))
             {
                 $nb_fichier++;
-                $image = get_image_by_user(array(
-                    'login' => $_SESSION['loggued_on_user']
+                $image_path = $dossier_ref2 . $fichier;
+                $image = get_image_by_path(array(
+                    'image_path' => $image_path
                 ));
                 $image_id = array(
                   'img_id' => $image['img_id']
@@ -25,8 +27,8 @@
                 echo '&nbsp;&nbsp;<A href="./main_comments.php?image='. $fichier
                     .'"><img id="imgtag4" src="./' . $dossier_ref . $fichier
                     . '"width="75" height="75" style="border: 1px solid black;" title="Cliquez pour accéder aux commentaires"/></A>&nbsp;'
-                    . $nb_heart .'&nbsp;<A href="../add_likes.php"><img src=" ./'
-                    . $dossier_heart .'1.png" width="12" height="12"></A>&nbsp;<A href="../del_likes.php"><img src=" ./'
+                    . $nb_heart .'&nbsp;<A href="../add_likes.php?image_add='. $fichier .'"><img src=" ./'
+                    . $dossier_heart .'1.png" width="12" height="12"></A>&nbsp;<A href="../del_likes.php?image_del='. $fichier .'"><img src=" ./'
                     . $dossier_heart .'4.png" width="12" height="12"></A></BR>';
                 if ($nb_fichier%10 == 0)
                   {

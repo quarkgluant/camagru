@@ -63,10 +63,11 @@ class Review extends Modele
     {
         $sql = "DELETE FROM T_REVIEWS
                 WHERE
-                USER_LOGIN = :login";
+                USER_LOGIN = :login and IMG_ID = :img_id";
 
         $reviews_bind = array(
-            ':login' => $reviews['login']
+            ':img_id' => $reviews['img_id'],
+            ':login' => $reviews['login'],
         );
 
         $this->executerRequete($sql, $reviews_bind);

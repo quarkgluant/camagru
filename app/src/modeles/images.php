@@ -15,14 +15,14 @@ class Image extends Modele
         return $images->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getImageByUser($user)
+    public function getImageByPath($user)
     {
-        $sql = 'select IMG_ID as img_id,'
-            . ' IMG_PATH as path from T_IMAGES'
-            . ' WHERE USER_LOGIN = :login';
+        $sql = 'select IMG_ID as img_id, USER_LOGIN as img_user '
+            . 'from T_IMAGES '
+            . ' WHERE IMG_PATH = :image_path';
 
         $image_bind = array(
-            ':login' => $user['login']
+            ':image_path' => $user['image_path']
         );
         $image = $this->executerRequete($sql, $image_bind);
         // return $image->fetch();
@@ -43,6 +43,18 @@ class Image extends Modele
         $image_bind = array(
             ':path' => $img['path'],
             ':user_login' => $img['login']
+        );
+        $this->executerRequete($sql, $image_bind);
+    }
+
+    public function delImage(array $img)
+    {
+        $sql = 'DELETE FROM T_IMAGES WHERE USER_LOGIN = :login AND IMG_ID = :img_id';
+
+            var_dump($img['image_path']);var_dump($img['login']);
+        $image_bind = array(
+            ':img_id' => $img['img_id'],
+            ':login' => $img['login']
         );
         $this->executerRequete($sql, $image_bind);
     }

@@ -239,11 +239,11 @@ function email_modify()
     }
 }
 
-function get_image_by_user(array $user)
+function get_image_by_path(array $user)
 {
     $image = new Image();
     try {
-        return $image->getImageByUser($user);
+        return $image->getImageByPath($user);
     } catch (Exception $e) {
         $message = $e->getMessage();
     }
@@ -260,11 +260,31 @@ function sauvegarde_image(array $img)
     }
 }
 
+function delete_image(array $image_supr)
+{
+    $image = new Image();
+    try {
+        $image->delImage($image_supr);
+    } catch (Exception $e) {
+        return $message = $e->getMessage();
+    }
+}
+
 function sauvegarde_review(array $comment)
 {
     $review = new Review();
     try {
         $review->saveReview($comment);
+    } catch (Exception $e) {
+        return $message = $e->getMessage();
+    }
+}
+
+function delete_review(array $unlike)
+{
+    $review = new Review();
+    try {
+        $review->delReview($unlike);
     } catch (Exception $e) {
         return $message = $e->getMessage();
     }
@@ -295,6 +315,16 @@ function unlike_like(array $unlike)
     $unliki = new Like();
     try {
         $unliki->dellike($unlike);
+    } catch (Exception $e) {
+        return $message = $e->getMessage();
+    }
+}
+
+function unlike_like_all(array $unlike)
+{
+    $unliki = new Like();
+    try {
+        $unliki->dellikeall($unlike);
     } catch (Exception $e) {
         return $message = $e->getMessage();
     }
