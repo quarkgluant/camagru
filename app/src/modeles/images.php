@@ -27,7 +27,7 @@ class Image extends Modele
         $image = $this->executerRequete($sql, $image_bind);
         // return $image->fetch();
         if ($image->rowCount() > 0)
-            return $image->fetch(PDO::FETCH_ASSOC);  // Accès à la première ligne de résultat
+            return $image->fetchAll(PDO::FETCH_ASSOC);
         else
             throw new Exception("Aucune image ne correspond à l'identifiant '$user'");
     }

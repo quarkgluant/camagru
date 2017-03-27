@@ -241,7 +241,7 @@ function email_modify()
 
 function get_image_by_path(array $user)
 {
-    $image = new Image();
+    $images = new Image();
     try {
         return $image->getImageByPath($user);
     } catch (Exception $e) {

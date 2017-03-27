@@ -11,7 +11,10 @@ $image_path = $dossier_ref2.$_GET['image_add'];
 $image = get_image_by_path(array(
     'image_path' => $image_path
 ));
-
+ var_dump($image);
+foreach ($images as $key => $value) {
+    # code...
+}
 $like = array(
     'img_id' => $image['img_id'],
     'login' => $_SESSION['loggued_on_user']
