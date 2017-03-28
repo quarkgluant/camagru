@@ -20,7 +20,7 @@
             <tr>
                 <td>
                     <div>
-                        <input id="fileselect" type="file" accept=".png" capture="camera">
+                        <input Onclick="return Confirm();" id="fileselect" type="file" accept=".png" capture="camera">
                         <b><- Ou choisissez une image ! -><b/>
                     </div>
                 </td>

@@ -41,6 +41,7 @@ include_once __DIR__ . "/../controleur/controleur.php";
         include __DIR__ . '/../../../public/js/confirm_del.js';
         include __DIR__ . '/../../../public/js/decor.js';
         include __DIR__ . '/../../../public/js/fusion.js';
+        include __DIR__ . '/../../../public/js/confirm.js';
         ?>
 
         </script>
