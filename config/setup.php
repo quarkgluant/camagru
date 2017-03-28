@@ -1,0 +1,59 @@
+<?php
+
+require 'database.php';
+
+function setup($dbh,$dbname)
+{
+	$sql = "CREATE DATABASE IF NOT EXISTS ".$dbname;
+	$result = $dbh->exec($sql);
+	$sql = "USE ".$dbname;
+	$result = $dbh->exec($sql);
+	$sql = "CREATE TABLE T_USERS (
+      USER_LOGIN VARCHAR(32) NOT NULL PRIMARY KEY,
+      USER_PASSWORD VARCHAR(255) NOT NULL,
+      USER_EMAIL VARCHAR(128) NOT NULL,
+      USER_DATE DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+      USER_UPDATE DATETIME NULL
+		) ";
+	$result = $dbh->exec($sql);
+	$sql = "CREATE TABLE T_IMAGES (
+      IMG_ID INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      IMG_PATH VARCHAR(255) NOT NULL,
+      USER_LOGIN VARCHAR(32) NOT NULL,
+      IMG_DATE DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+      CONSTRAINT fk_img_user FOREIGN KEY(USER_LOGIN) REFERENCES T_USERS(USER_LOGIN)
+		)";
+	$result = $dbh->exec($sql);
+	$sql = "CREATE TABLE T_REVIEWS (
+      REV_ID INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      USER_LOGIN VARCHAR(32) NOT NULL,
+      REV_TEXT VARCHAR(255) NOT NULL,
+      IMG_ID INT(10) NOT NULL,
+      REV_DATE DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+      REV_UPDATE DATETIME NULL,
+      CONSTRAINT fk_rev_user FOREIGN KEY(USER_LOGIN) REFERENCES T_USERS(USER_LOGIN),
+      CONSTRAINT fk_rev_img FOREIGN KEY(IMG_ID) REFERENCES T_IMAGES(IMG_ID)
+		)";
+	$result = $dbh->exec($sql);
+	$sql = "CREATE TABLE T_LIKES (
+      LIK_ID INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+      USER_LOGIN VARCHAR(32) NOT NULL,
+      IMG_ID INT(10) NOT NULL,
+      LIK_DATE DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+      LIK_UPDATE DATETIME NULL,
+      CONSTRAINT fk_lik_user FOREIGN KEY(USER_LOGIN) REFERENCES T_USERS(USER_LOGIN),
+      CONSTRAINT fk_lik_img FOREIGN KEY(IMG_ID) REFERENCES T_IMAGES(IMG_ID)
+		)";
+	$result = $dbh->exec($sql);
+}
+
+$dsn = "mysql:host=".$DB_HOST;
+$db = new PDO(  $dsn,
+                $DB_USER,
+                $DB_PASSWORD
+            );
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+setup($db,$DB_NAME);
+echo 'setup completed'.PHP_EOL;
+
+?>

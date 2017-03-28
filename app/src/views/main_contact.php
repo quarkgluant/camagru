@@ -21,6 +21,7 @@ include_once __DIR__ . "/../controleur/controleur.php";
     <HEAD>
         <title id="title-doc">Camagru : changement de mot de passe !</title>
         <meta content="camagru; sangare,cadiot,42,école 42,php,HTML5,webcam,cybercaméra,caméra,getUserMedia,device,multimédia,vidéo,MediaStream" name="keywords">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
         <Meta  charset = "UTF-8">
         <meta name="viewport" content="initial-scale=1.0,width=device-width" />
         <?php

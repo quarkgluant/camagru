@@ -41,7 +41,10 @@
 
         if ($page == $nb_page_fin){
           $nb_page_plus = 0;
-          $nb_page_moins = (int)($_GET['nb_page'] - 1);
+          if ($nb_page_fin != 0) {
+            $nb_page_moins = (int)($_GET['nb_page'] - 1);
+          }
+          else {$nb_page_moins = 0;}
         }
         elseif ($page == 0) {
           $nb_page_moins = $nb_page_fin;

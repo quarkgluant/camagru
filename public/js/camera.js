@@ -44,10 +44,8 @@ var fr;
 
 sel.addEventListener('change',function(e){
     var f = sel.files[0];
-
     fr = new FileReader();
     fr.onload = receivedData;
-
     fr.readAsDataURL(f);
 })
 
