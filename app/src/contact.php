@@ -1,8 +1,3 @@
-<?php
-
-//session_start();
-
-?>
 <HTML>
 <HEAD>
     <title id="title-doc">Camagru</title>
@@ -23,7 +18,7 @@ include('views/header.php');
     <tr>
 
         <?php
-        include('views/contact_main.php');
+        include('views/contact.php');
         ?>
 
     </tr>
