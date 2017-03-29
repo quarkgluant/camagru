@@ -38,10 +38,19 @@ include_once __DIR__ . "/../controleur/controleur.php";
         <script type="text/javascript">
 
         <?php
-        include __DIR__ . '/../../../public/js/confirm_del.js';
-        include __DIR__ . '/../../../public/js/decor.js';
-        include __DIR__ . '/../../../public/js/fusion.js';
-        include __DIR__ . '/../../../public/js/confirm.js';
+        if (basename(__DIR__) === "src"){
+          include __DIR__ . '/../../public/js/confirm_del.js';
+          include __DIR__ . '/../../public/js/decor.js';
+          include __DIR__ . '/../../public/js/fusion.js';
+          include __DIR__ . '/../../public/js/confirm.js';
+        }
+        elseif (basename(__DIR__) === "views") {
+          include __DIR__ . '/../../../public/js/confirm_del.js';
+          include __DIR__ . '/../../../public/js/decor.js';
+          include __DIR__ . '/../../../public/js/fusion.js';
+          include __DIR__ . '/../../../public/js/confirm.js';
+        }
+
         ?>
 
         </script>

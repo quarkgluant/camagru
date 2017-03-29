@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-// require 'Controleur/Controleur.php';
 require __DIR__ .'/../app/src/controleur/controleur.php';
 
 ?>
@@ -11,6 +10,16 @@ require __DIR__ .'/../app/src/controleur/controleur.php';
 	<meta content="camagru; sangare; pcadiot; 42; école 42; php" name="keywords">
 	<Meta  charset = "UTF-8">
 	<link rel="stylesheet" href="css/application.css" />
+	<script type="text/javascript">
+
+	<?php
+	include __DIR__ . '/js/confirm_del.js';
+	include __DIR__ . '/js/decor.js';
+	include __DIR__ . '/js/fusion.js';
+	include __DIR__ . '/js/confirm.js';
+	?>
+
+	</script>
 </head>
 
 <body>
@@ -46,8 +55,8 @@ if (strlen($_SESSION['loggued_on_user']) > 0 && auth_user($_SESSION['loggued_on_
 <ul id="menu">
 		<li><a href="../app/src/views/main_user_password_modify.php">Modifier mon mot de passe</a></li>
 <li><a href="../app/src/views/main_user_email_modify.php">Modifier son adresse mail </a></li>
-<li><a href="../app/src/views/user_delete.php">Supprimer mon compte</a></li>
-<li><a href="../app/src/logout.php">Se déconnecter</a></li>
+<li><a Onclick="var sentence='Voullez-vous réellement supprimer votre profil ? ';return Confirm(sentence);" href="../app/src/views/user_delete.php">Supprimer mon compte</a></li>
+<li><a Onclick="var sentence='Voullez-vous réellement vous déconnecter ? ';return Confirm(sentence);" href="../app/src/logout.php">Se déconnecter</a></li>
 <li><a href="../app/src/views/main_camagru.php">	Accéder au traitement d'image !</a></li>
 </ul>
 <?php

@@ -1,6 +1,4 @@
 function fusion() {
-var r = confirm("Voulez-vous réellement fusionner les images !");
-if (r == true) {
     if (imgtag.src !== imgtagsrc_initial) // on n'envoie que si une image a ete prise
     {
         var xhr = new XMLHttpRequest();
@@ -23,5 +21,4 @@ if (r == true) {
     else {
         alert("veuillez prendre la photo dans/de votre tronche");
     }
-  }
 }

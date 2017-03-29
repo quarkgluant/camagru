@@ -34,7 +34,7 @@
             <input type="radio" name="html" value="text" checked> Format texte<br>
             <input type="radio" name="html" value="html"> Format HTML<br>
             </br></br>
-            <input type="submit" name="submit" value="Envoi Mail"/>
+            <input Onclick="var sentence='Voullez-vous réellement envoyer un mail ? ';return Confirm(sentence);" type="submit" name="submit" value="Envoi Mail"/>
             </form>
         </td>
     </tr>

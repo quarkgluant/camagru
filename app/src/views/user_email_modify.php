@@ -17,7 +17,7 @@
         </tr>
     </table>
         <br/>
-    <input type="submit" name="submit" value="OK"/>
+    <input Onclick="var sentence='Voullez-vous réellement changer votre adresse mail ? ';return Confirm(sentence);" type="submit" name="submit" value="OK"/>
     <INPUT TYPE="reset" NAME="reset" VALUE="Effacer">
     </form>
 

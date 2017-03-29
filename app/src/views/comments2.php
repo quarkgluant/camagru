@@ -36,7 +36,7 @@
                 echo '<input type="hidden" name="image_hidden" value="'.$_GET['image'] . '">';
 ?>
                 <TEXTAREA name="comment" rows=10 cols=120 wrap="physical" placeholder="Votre commentaire."/></TEXTAREA>
-              </BR><input type="submit" value="Valider commentaire">
+              </BR><input Onclick="var sentence='Voullez-vous réellement envoyer un commentaire ? ';return Confirm(sentence);" type="submit" value="Valider commentaire">
             </form>
           </td>
             </tr>

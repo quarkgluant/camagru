@@ -1,5 +1,5 @@
 <td class="main">
-    <form method="post" action="javascript:fusion()">
+    <form id="form_fusion" method="post" action="javascript:fusion()">
         <table style="border:solid 1px black; border-radius:5px; text-align:left; box-shadow:0 0 10px;">
             <tr>
                 <td>
@@ -20,7 +20,7 @@
             <tr>
                 <td>
                     <div>
-                        <input Onclick="return Confirm();" id="fileselect" type="file" accept=".png" capture="camera">
+                        <input id="fileselect" type="file" accept=".png" capture="camera">
                         <b><- Ou choisissez une image ! -><b/>
                     </div>
                 </td>
@@ -33,7 +33,7 @@
                 </td>
             </tr>
         </table>
-        <input type="reset"> <input id="fusion" type="submit" value="Fusionner image et décor" disabled>
+        <input type="reset"> <input Onclick="var sentence='Voullez-vous réellement fusionner les images ? ';return Confirm(sentence);" id="fusion" type="submit" value="Fusionner image et décor" disabled>
             <div>
                 <canvas id="canvas" width="500" height="375"></canvas>
             </div>

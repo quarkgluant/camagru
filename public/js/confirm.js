@@ -1,6 +1,6 @@
-function Confirm()
+function Confirm(sentence)
 {
-  var x = confirm("Etes-vous certain ???");
+  var x = confirm(sentence);
   if (x)
       return true;
   else

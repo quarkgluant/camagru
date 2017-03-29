@@ -4,6 +4,8 @@ require 'database.php';
 
 function setup($dbh,$dbname)
 {
+	$sql = "DROP DATABASE IF EXISTS ".$dbname;
+	$result = $dbh->exec($sql);
 	$sql = "CREATE DATABASE IF NOT EXISTS ".$dbname;
 	$result = $dbh->exec($sql);
 	$sql = "USE ".$dbname;

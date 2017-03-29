@@ -25,7 +25,12 @@
          echo '<a href="main_comments2.php?image='.$_GET['image'].'"> Ajouter un commentaire à la photo !!!! </a>';
 
          if ($image['img_user'] == $_SESSION['loggued_on_user'])
-          echo '<A href="../image_supr.php?image_supr='.$_GET['image'].'">Supprimer la photo !</A>';
+         ?>
+
+          <A Onclick="var sentence='Voullez-vous réellement supprimer la photo ? ';return Confirm(sentence);"
+
+         <?php
+          echo 'href="../image_supr.php?image_supr='.$_GET['image'].'">Supprimer la photo !</A>';
 
          $reviews = get_reviews_by_image($image_id);
 

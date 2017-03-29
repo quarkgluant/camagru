@@ -12,7 +12,7 @@
             <li><a href="javascript:confirmDel()">Supprimer son compte !</a></li>
             <li><a href="../views/main_contact.php">Contacts</a></li>
             <li><i><a href="../../../public/index.php"> Revenir à l'accueil !!!! </a></i></li>
-            <li><a href="../logout.php">Se déconnecter !</a></li>
+            <li><a Onclick="var sentence='Voullez-vous réellement vous déconnecter ? ';return Confirm(sentence);" href="../logout.php">Se déconnecter !</a></li>
           <?php
               }
       ?>

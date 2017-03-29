@@ -19,11 +19,12 @@ var imgtagsrc_initial = imgtag.src;
 var sel = document.getElementById('fileselect');
 
 document.addEventListener('DOMContentLoaded', function(){
+
         v = document.getElementById('videoElement');
-    canvas = document.getElementById('canvas');
-    context = canvas.getContext('2d');
-    w = canvas.width;
-    h = canvas.height;
+        canvas = document.getElementById('canvas');
+        context = canvas.getContext('2d');
+        w = canvas.width;
+        h = canvas.height;
 
 },false);
 
@@ -43,10 +44,17 @@ document.getElementById('save').addEventListener('click',function(e){
 var fr;
 
 sel.addEventListener('change',function(e){
+  var r = confirm("Voulez-vous réellement télécharger ce fichier ? ");
+  if (r == true) {
+
     var f = sel.files[0];
     fr = new FileReader();
     fr.onload = receivedData;
     fr.readAsDataURL(f);
+  }
+  else {
+    document.getElementById('form_fusion').reset();
+  }
 })
 
 function receivedData() {

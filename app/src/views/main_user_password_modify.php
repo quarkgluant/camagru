@@ -34,6 +34,22 @@ include_once __DIR__ . "/../controleur/controleur.php";
                 }
                 ?>
                 <link rel="stylesheet" <?= "href="."'".$href."'" ?> />
+
+                <script type="text/javascript">
+
+                <?php
+                if (basename(__DIR__) === "src"){
+                  include __DIR__ . '/../../public/js/confirm_del.js';
+                  include __DIR__ . '/../../public/js/confirm.js';
+                }
+                elseif (basename(__DIR__) === "views") {
+                  include __DIR__ . '/../../../public/js/confirm_del.js';
+                  include __DIR__ . '/../../../public/js/confirm.js';
+                }
+
+                ?>
+
+                </script>
     </HEAD>
     <body>
 
