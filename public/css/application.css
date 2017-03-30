@@ -218,5 +218,14 @@ header #menu li a{
     font-style : italic ;
     font-family : monospace ;
 }
-;
+
+@media screen and (max-width: 1100px) {
+  #menu {
+    display: block !important;
+    text-align: center;
+  }
+  #menu li, #menu li a {
+    display: block;
+    margin: 5px 0 !important;
+  }
 }
