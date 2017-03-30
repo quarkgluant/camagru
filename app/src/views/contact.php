@@ -43,5 +43,13 @@
 <br/>
 <ul id="menu">
     <li>
-<a href="../views/main_camagru.php"> Revenir à la page précédente !!!! </a></li>
+      <?php
+      if (basename(__DIR__) === "src"){
+          $href = "./views/main_camagru.php";
+      }
+      elseif (basename(__DIR__) === "views") {
+          $href = "./main_camagru.php";
+      }
+      ?>
+<a <?= "href="."'".$href."'" ?>> Revenir à la page précédente !!!! </a></li>
 </ul>
