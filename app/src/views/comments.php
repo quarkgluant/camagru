@@ -27,7 +27,7 @@
          if ($image['img_user'] == $_SESSION['loggued_on_user'])
          ?>
 
-          <A Onclick="var sentence='Voullez-vous réellement supprimer la photo ? ';return Confirm(sentence);"
+          <A Onclick="var sentence='Voulez-vous réellement supprimer la photo ? ';return Confirm(sentence);"
 
          <?php
           echo 'href="../image_supr.php?image_supr='.$_GET['image'].'">Supprimer la photo !</A>';

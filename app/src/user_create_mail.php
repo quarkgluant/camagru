@@ -6,7 +6,7 @@ include_once __DIR__ . "/controleur/controleur.php";
 // $destinataire = 'pcadiot@gmail.com';
 // Pour les champs $expediteur / $copie / $destinataire, séparer par une virgule s'il y a plusieurs adresses
 $expediteur = 'pathibul.r@gmail.com';
-//$copie_cachee = 'pcadiot@student.42.fr';
+$copie_cachee = 'pcadiot@student.42.fr';
 $destinataire = get_mail($_POST['login']);
 $_SESSION['tag'] = 'GOOD';
 $objet = "Confirmation Inscription " . $destinataire; // Objet du message
