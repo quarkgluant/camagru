@@ -62,6 +62,7 @@ header {
     border: 1px solid black;
 }
 
+
 .main {
     width:20%;
 }
@@ -219,13 +220,21 @@ header #menu li a{
     font-family : monospace ;
 }
 
-@media screen and (max-width: 1100px) {
-  #menu {
-    display: block !important;
-    text-align: center;
-  }
-  #menu li, #menu li a {
-    display: block;
-    margin: 5px 0 !important;
-  }
+#tableau tr  {
+    display: flex;
+}
+
+@media (max-width: 360px) {
+    #menu {
+        display: block !important;
+        text-align: center;
+    }
+    #menu li, #menu li a {
+        display: block;
+        margin: 5px 0 !important;
+    }
+    #tableau tr {
+        display: flex  !important;
+        flex-wrap: wrap  !important;
+    }
 }

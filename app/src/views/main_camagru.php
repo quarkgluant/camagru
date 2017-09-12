@@ -62,11 +62,11 @@ include_once __DIR__ . "/../controleur/controleur.php";
             ?>
             <hr/>
             <br/>
-            <table>
+            <table  id="tableau">
                 <tr>
                     <td>
 
-                        <table  name = "table1">
+                        <table  id="table1">
                             <tr>
                                 <?php
                                 include __DIR__ . '/main.php';
