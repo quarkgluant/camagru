@@ -1,8 +1,7 @@
-<div class="galerie" >
 <td style="margin-top:10px; margin-right:10px;">
   Vos images sauvegardées !
-</td>
-<td>
+    
+    <div class="galerie" >
 </br></br>
     <?php
     $nb_fichier = 0;
@@ -65,6 +64,5 @@
     else
     echo 'Le dossier n\' a pas pu être ouvert';
     ?>
-
-</td>
 </div>
+</td>
