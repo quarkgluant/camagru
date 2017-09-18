@@ -1,5 +1,8 @@
-<td class="side2" syle="margin-top:10px; margin-right:10px;">
-  Vos images sauvegardées !</td><td>
+<div class="galerie" >
+<td style="margin-top:10px; margin-right:10px;">
+  Vos images sauvegardées !
+</td>
+<td>
 </br></br>
     <?php
     $nb_fichier = 0;
@@ -28,12 +31,12 @@
 
                 if ((int)($nb_fichier / 10) == $page)
                   {
-                echo '<center>&nbsp;&nbsp;<A href="./main_comments.php?image='. $fichier
+                echo '&nbsp;&nbsp;<A href="./main_comments.php?image='. $fichier
                     .'"><img id="imgtag4" src="./' . $dossier_ref . $fichier
                     . '"width="75" height="75" style="border: 1px solid black;" title="Cliquez pour accéder aux commentaires"/></A>&nbsp;'
                     . $nb_heart .'&nbsp;<A href="../add_likes.php?image_add='. $fichier .'"><img src=" ./'
                     . $dossier_heart .'1.png" width="12" height="12"></A>&nbsp;<A href="../del_likes.php?image_del='. $fichier .'"><img src=" ./'
-                    . $dossier_heart .'4.png" width="12" height="12"></A></center></BR>';
+                    . $dossier_heart .'4.png" width="12" height="12"></A></BR>';
                   }
                   $nb_page_fin = (int)($nb_fichier / 10);
             } // On ferme le if (qui permet de n'afficher que les images)
@@ -54,8 +57,8 @@
           $nb_page_moins = (int)($_GET['nb_page'] - 1);
           $nb_page_plus = (int)($_GET['nb_page'] + 1);
         }
-          echo '</br></br><table><tr><td><center>Page : '.$nb_page_moins.'&nbsp;&nbsp;<A href="./main_camagru.php?nb_page='.$nb_page_moins.'&move=-"><img style="border:1px solid black" src="../../../public/img/arrows/agauche.png"width="30" height="30" title="Précédent"></A></td><td>&nbsp;&nbsp;<b><u>Page : '.$page.'</u></b>&nbsp;&nbsp;</td><td>';
-          echo '<A href="./main_camagru.php?nb_page='.$nb_page_plus.'&move=+"><img style="border:1px solid black" src="../../../public/img/arrows/adroite.png"width="30" height="30" title="Suivant"></A>&nbsp;&nbsp;Page : '.$nb_page_plus.'</center></td></tr></table>';
+          echo '</br></br><table><tr><td>Page : '.$nb_page_moins.'&nbsp;&nbsp;<A href="./main_camagru.php?nb_page='.$nb_page_moins.'&move=-"><img style="border:1px solid black" src="../../../public/img/arrows/agauche.png"width="30" height="30" title="Précédent"></A></td><td>&nbsp;&nbsp;<b><u>Page : '.$page.'</u></b>&nbsp;&nbsp;</td><td>';
+          echo '<A href="./main_camagru.php?nb_page='.$nb_page_plus.'&move=+"><img style="border:1px solid black" src="../../../public/img/arrows/adroite.png"width="30" height="30" title="Suivant"></A>&nbsp;&nbsp;Page : '.$nb_page_plus.'</td></tr></table>';
 
           closedir($dossier);
     }
@@ -64,3 +67,4 @@
     ?>
 
 </td>
+</div>

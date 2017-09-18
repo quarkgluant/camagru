@@ -221,7 +221,7 @@ header #menu li a{
 }
 
 #tableau tr  {
-    display: flex;
+    display: flex !important;
 }
 
 @media (max-width: 360px) {
@@ -236,5 +236,30 @@ header #menu li a{
     #tableau tr {
         display: flex  !important;
         flex-wrap: wrap  !important;
+        flex-direction: column;
+        justify-content: center;
     }
 }
+
+@media screen and (max-width: 1100px) {
+    #menu {
+        display: block !important;
+        text-align: center;
+    }
+    #menu li, #menu li a {
+        display: block;
+        margin: 5px 0 !important;
+    }
+
+    #tableau tr {
+        display: flex  !important;
+        flex-wrap: wrap  !important;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #canvas, #container, #container2, #container3 {
+
+    }
+}
+

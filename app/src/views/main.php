@@ -33,7 +33,7 @@
                 </td>
             </tr>
         </table>
-        <input type="reset"> <input Onclick="var sentence='Voullez-vous réellement fusionner les images ? ';return Confirm(sentence);" id="fusion" type="submit" value="Fusionner image et décor" disabled>
+        <input type="reset"> <input Onclick="var sentence='Voulez-vous réellement fusionner les images ? ';return Confirm(sentence);" id="fusion" type="submit" value="Fusionner image et décor" disabled>
             <div>
                 <canvas id="canvas" width="500" height="375"></canvas>
             </div>
